@@ -1,7 +1,9 @@
 (function(){
   var data=window.MPPM_RATE_DATA;
   var pubs=Object.keys(data||{});
-  var classNumber=1;
+  var className="Class 1";
+  var classes=["Nursery","LKG","UKG"];
+  for(var cn=1;cn<=8;cn++)classes.push("Class "+cn);
   var catalogMeta={
     "Magic Mind":{detail:"A Unit of Galaxy Publication",file:"MAGIC MIND CATA. FOR VIEW.pdf"},
     "Galaxy Publication":{detail:"Galaxy Books · Kinderquill Books",file:"GALAXY CATALOGUE DESIGN FOR VIEW.pdf"},
@@ -15,17 +17,19 @@
   pubs.forEach(function(pub){
     var opt=document.createElement("option");opt.value=pub;opt.textContent=pub;filter.append(opt);
   });
-  for(var n=1;n<=8;n++){
-    var b=document.createElement("button");b.type="button";b.textContent="Class "+n;b.dataset.class=n;b.className=n===1?"active":"";classTabs.append(b);
-  }
+  classes.forEach(function(name,index){
+    var b=document.createElement("button");b.type="button";b.textContent=name;b.dataset.class=name;b.className=name===className?"active":"";classTabs.append(b);
+  });
   document.getElementById("sourceLinks").innerHTML=pubs.map(function(pub){
     var c=catalogMeta[pub];return '<a class="source-card" href="assets/catalogs/'+encodeURIComponent(c.file)+'" target="_blank" rel="noopener"><span class="source-mark">PDF</span><span><small>'+c.detail+'</small><b>'+pub+'</b><em>Open original catalogue ↗</em></span></a>';
   }).join("");
   function allRows(){
     var out=[];
     pubs.forEach(function(pub){
-      (data[pub]||[]).filter(function(item){return Array.isArray(item.p)}).forEach(function(item){
-        var price=Array.isArray(item.p)?(item.p[classNumber-1]??null):(item.p&&item.p["Class "+classNumber]||null);
+      (data[pub]||[]).filter(function(item){return Array.isArray(item.p)||(item.p&&typeof item.p==="object")}).forEach(function(item){
+        var price=Array.isArray(item.p)?(className.indexOf("Class ")===0?(item.p[Number(className.slice(6))-1]??null):null):(item.p&&Object.prototype.hasOwnProperty.call(item.p,className)?item.p[className]:null);
+        if((className==="Nursery"||className==="LKG"||className==="UKG")&&Array.isArray(item.p))return;
+        if(price==null&&item.p&& !Array.isArray(item.p)&&!Object.prototype.hasOwnProperty.call(item.p,className))return;
         out.push({publisher:pub,series:item.n,subject:item.s,price:price});
       });
     });
@@ -40,9 +44,9 @@
   }
   function render(){
     var list=filteredRows();
-    document.getElementById("classEyebrow").textContent="CLASS "+classNumber+" RATE MATRIX";
+    document.getElementById("classEyebrow").textContent=className.toUpperCase()+" RATE MATRIX";
     document.getElementById("matrixTitle").textContent="All subjects and series";
-    document.getElementById("matrixCount").textContent=list.length+" catalogue entries · "+list.filter(function(x){return x.price!=null}).length+" rates listed for Class "+classNumber;
+    document.getElementById("matrixCount").textContent=list.length+" catalogue entries · "+list.filter(function(x){return x.price!=null}).length+" rates listed for "+className;
     document.getElementById("publisherTotals").innerHTML=pubs.filter(function(pub){return selectedPublisher==="all"||pub===selectedPublisher}).map(function(pub){
       var entries=list.filter(function(x){return x.publisher===pub});
       var priced=entries.filter(function(x){return x.price!=null}),total=priced.reduce(function(sum,x){return sum+Number(x.price)},0);
@@ -51,23 +55,23 @@
     rows.innerHTML=list.map(function(r){
       return '<tr><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
     }).join("")||'<tr><td class="empty" colspan="4">No matching catalogue rows. Try another subject or publisher.</td></tr>';
-    var message=["Class-wise catalogue rate list — Markandey Pandey Pustak Mandir","Class "+classNumber];
+    var message=["Class-wise catalogue rate list — Markandey Pandey Pustak Mandir",className];
     list.filter(function(r){return r.price!=null}).forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))});
     message.push("Publisher totals are catalogue sums; please confirm the school’s adopted books and current rates.");
-    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send Class "+classNumber+" list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
+    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send "+className+" list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
   }
   classTabs.addEventListener("click",function(e){
-    var b=e.target.closest("[data-class]");if(!b)return;classNumber=Number(b.dataset.class);
+    var b=e.target.closest("[data-class]");if(!b)return;className=b.dataset.class;
     classTabs.querySelectorAll("button").forEach(function(x){x.classList.toggle("active",x===b)});render();
   });
   filter.addEventListener("change",function(){selectedPublisher=filter.value;render()});
   search.addEventListener("input",render);
   document.getElementById("printMatrix").onclick=function(){window.print()};
   document.getElementById("downloadCsv").onclick=function(){
-    var lines=[["Publisher","Series / title","Subject","Class "+classNumber+" rate (INR)"].join(",")];
+    var lines=[["Publisher","Series / title","Subject",className+" rate (INR)"].join(",")];
     filteredRows().forEach(function(r){lines.push([r.publisher,r.series,r.subject,r.price==null?"Not listed":r.price].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(","))});
     var blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
-    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="class-"+classNumber+"-subject-rate-matrix.csv";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=className.toLowerCase().replace(/[^a-z0-9]+/g,"-")+"-subject-rate-matrix.csv";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
   };
   render();
 })();
