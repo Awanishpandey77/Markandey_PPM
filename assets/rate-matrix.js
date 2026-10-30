@@ -14,6 +14,8 @@
   var search=document.getElementById("searchRates");
   var rows=document.getElementById("rateRows");
   var selectedPublisher="all";
+  var selections=new Map();
+  function selectedSet(){if(!selections.has(className))selections.set(className,new Set());return selections.get(className)}
   pubs.forEach(function(pub){
     var opt=document.createElement("option");opt.value=pub;opt.textContent=pub;filter.append(opt);
   });
@@ -30,7 +32,7 @@
         var price=Array.isArray(item.p)?(className.indexOf("Class ")===0?(item.p[Number(className.slice(6))-1]??null):null):(item.p&&Object.prototype.hasOwnProperty.call(item.p,className)?item.p[className]:null);
         if((className==="Nursery"||className==="LKG"||className==="UKG")&&Array.isArray(item.p))return;
         if(price==null&&item.p&& !Array.isArray(item.p)&&!Object.prototype.hasOwnProperty.call(item.p,className))return;
-        out.push({publisher:pub,series:item.n,subject:item.s,price:price});
+        out.push({publisher:pub,series:item.n,subject:item.s,price:price,key:pub+"|"+item.n+"|"+item.s});
       });
     });
     return out;
@@ -54,10 +56,15 @@
       return '<article class="total-card"><span>'+pub+'</span><strong>'+money(total)+'</strong><small>'+priced.length+' listed rates · '+entries.length+' series</small></article>';
     }).join("");
     rows.innerHTML=list.map(function(r){
-      return '<tr><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
-    }).join("")||'<tr><td class="empty" colspan="4">No matching catalogue rows. Try another subject or publisher.</td></tr>';
+      return '<tr><td data-label="Select"><input class="rate-select" type="checkbox" data-rate-key="'+encodeURIComponent(r.key)+'" '+(selectedSet().has(r.key)?"checked":"")+' aria-label="Select '+r.series+'"></td><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
+    }).join("")||'<tr><td class="empty" colspan="5">No matching catalogue rows. Try another subject or publisher.</td></tr>';
+    var chosen=allRows().filter(function(r){return selectedSet().has(r.key)&&r.price!=null});
+    var chosenTotal=chosen.reduce(function(sum,r){return sum+Number(r.price)},0);
+    document.getElementById("selectionSummary").textContent=chosen.length+" books selected · "+money(chosenTotal);
     var message=["Class-wise catalogue rate list — Markandey Pandey Pustak Mandir",className];
-    list.filter(function(r){return r.price!=null}).forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))});
+    chosen.forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))});
+    if(!chosen.length)message.push("No books selected yet. Select rows on the page to build the list.");
+    message.push("SELECTED TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
     message.push("Publisher totals are catalogue sums; please confirm the school’s adopted books and current rates.");
     var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send "+className+" list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
   }
@@ -67,6 +74,9 @@
   });
   filter.addEventListener("change",function(){selectedPublisher=filter.value;render()});
   search.addEventListener("input",render);
+  rows.addEventListener("change",function(e){var input=e.target.closest("[data-rate-key]");if(!input)return;var key=decodeURIComponent(input.dataset.rateKey);input.checked?selectedSet().add(key):selectedSet().delete(key);render()});
+  document.getElementById("selectAllRates").onclick=function(){filteredRows().forEach(function(r){if(r.price!=null)selectedSet().add(r.key)});render()};
+  document.getElementById("clearRateSelection").onclick=function(){selectedSet().clear();render()};
   document.getElementById("printMatrix").onclick=function(){window.print()};
   document.getElementById("downloadCsv").onclick=function(){
     var lines=[["Publisher","Series / title","Subject",className+" rate (INR)"].join(",")];
