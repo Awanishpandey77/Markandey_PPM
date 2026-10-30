@@ -49,7 +49,6 @@
     document.getElementById("classEyebrow").textContent=className.toUpperCase()+" RATE MATRIX";
     document.getElementById("matrixTitle").textContent="All subjects and series";
     document.getElementById("matrixCount").textContent=list.length+" catalogue entries · "+list.filter(function(x){return x.price!=null}).length+" rates listed for "+className;
-    document.getElementById("publisherTotals").innerHTML="";
     rows.innerHTML=list.map(function(r){
       return '<tr><td data-label="Select"><input class="rate-select" type="checkbox" data-rate-key="'+encodeURIComponent(r.key)+'" '+(selectedSet().has(r.key)?"checked":"")+' aria-label="Select '+r.series+'"></td><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
     }).join("")||'<tr><td class="empty" colspan="5">No matching catalogue rows. Try another subject or publisher.</td></tr>';
@@ -63,7 +62,7 @@
     if(!chosen.length)message.push("No books selected yet. Select rows on the page to build the list.");
     message.push("SELECTED TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
     message.push("Publisher totals are catalogue sums; please confirm the school’s adopted books and current rates.");
-    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send "+className+" list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
+    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send "+className+" selected list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
   }
   classTabs.addEventListener("click",function(e){
     var b=e.target.closest("[data-class]");if(!b)return;className=b.dataset.class;
