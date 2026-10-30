@@ -7,6 +7,10 @@
   ];
   var series = {
     "Magic Mind":[
+      {n:"Pre-Nursery Set · 7 Books",s:"Pre-Nursery complete set",p:{"Pre-Nursery":1160}},
+      {n:"Nursery Set · 8 Books",s:"Nursery complete set",p:{Nursery:1550}},
+      {n:"LKG Set · 9 Books",s:"LKG complete set",p:{LKG:1790}},
+      {n:"UKG Set · 10 Books",s:"UKG complete set",p:{UKG:2050}},
       {n:"Pebbles of Grammar",s:"English grammar",p:[190,240,250,290,360,400,440,450]},
       {n:"Infopedia",s:"General Knowledge",p:[170,180,180,200,220,240,250,260]},
       {n:"Manasvi Hindi Pathya Pustak",s:"Hindi",p:[240,290,320,340,360,370,380,399]},
@@ -56,7 +60,7 @@
     ]
   };
   window.MPPM_RATE_DATA=series;
-  var classes=["Nursery","LKG","UKG"];
+  var classes=["Pre-Nursery","Nursery","LKG","UKG"];
   for(var i=1;i<=12;i++)classes.push("Class "+i);
   var wrap=document.querySelector("#books .wrap");
   if(!wrap)return;
