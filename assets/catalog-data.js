@@ -23,9 +23,9 @@
       {n:"The Magic of Conversation",s:"Conversation",p:[150,160,170,180,190]}
     ],
     "Galaxy Publication":[
-      {n:"Nursery Kit Set",s:"Full class kit",p:{Nursery:1830}},
-      {n:"L.K.G. Kit Set",s:"Full class kit",p:{LKG:1850}},
-      {n:"U.K.G. Kit Set",s:"Full class kit",p:{UKG:2240}},
+      {n:"Nursery Kit Set",s:"Full class kit",p:{Nursery:1830},items:[["Akshar Gyan",260],["Akshar Rachna",240],["Capital Letter Writing",260],["My Alphabet",260],["My Big Drawing & Craft-A",160],["Number Books (1-100)",250],["Picture Dictionary-A",180],["Rhymes & Balgeet-A",220]]},
+      {n:"L.K.G. Kit Set",s:"Full class kit",p:{LKG:1850},items:[["Cursive Writing Small Letter",240],["English Pre-Primer",290],["Maths Pre-Primer",260],["My Big Drawing & Craft-B",160],["Picture Dictionary-B",180],["Rhymes & Balgeet-B",220],["Shabad Gyan",300],["Shabad Rachna",200]]},
+      {n:"U.K.G. Kit Set",s:"Full class kit",p:{UKG:2240},items:[["Cursive Writing (Caps & Small)",260],["English Primer",300],["Grow With Nature EVS",320],["Maths Primer",280],["My Big Drawing & Craft-C",160],["Rhymes & Balgeet-C",220],["Shabad Gyan",280],["Shabad Rachna",240],["Table Book",180]]},
       {n:"Translation Compass",s:"Translation",p:[180,180,180,180,180]},
       {n:"Learning Computer",s:"Computer",p:[240,260,280,320,340,400,425,450]},
       {n:"Cursive Time",s:"Handwriting",p:[180,180,180,200,200]},

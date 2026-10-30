@@ -32,7 +32,7 @@
         var price=Array.isArray(item.p)?(className.indexOf("Class ")===0?(item.p[Number(className.slice(6))-1]??null):null):(item.p&&Object.prototype.hasOwnProperty.call(item.p,className)?item.p[className]:null);
         if((className==="Nursery"||className==="LKG"||className==="UKG")&&Array.isArray(item.p))return;
         if(price==null&&item.p&& !Array.isArray(item.p)&&!Object.prototype.hasOwnProperty.call(item.p,className))return;
-        out.push({publisher:pub,series:item.n,subject:item.s,price:price,key:pub+"|"+item.n+"|"+item.s});
+        out.push({publisher:pub,series:item.n,subject:item.s,price:price,items:item.items||null,key:pub+"|"+item.n+"|"+item.s});
       });
     });
     return out;
@@ -57,11 +57,13 @@
     var chosen=allRows().filter(function(r){return selectedSet().has(r.key)&&r.price!=null});
     var chosenTotal=chosenByClass.reduce(function(sum,x){return sum+x.total},0);
     var summary=document.getElementById("selectionSummary");
-    var allCount=chosenByClass.reduce(function(sum,x){return sum+x.items.length},0);
+    var detailRows=function(book,level){return book.items?book.items.map(function(part){return {publisher:book.publisher,series:part[0],subject:part[0],price:part[1]}}):[book]};
+    chosenByClass.forEach(function(group){group.details=group.items.flatMap(function(book){return detailRows(book,group.name)}).sort(function(a,b){return a.subject.localeCompare(b.subject)});group.bookCount=group.details.length});
+    var allCount=chosenByClass.reduce(function(sum,x){return sum+x.bookCount},0);
     summary.hidden=!allCount;
-    summary.innerHTML=allCount?'<strong>Selected books · '+allCount+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+chosenByClass.map(function(group){return '<article><span>'+group.name+'</span><b>'+group.items.length+' '+(group.items.length===1?'book':'books')+'</b><strong>Class total '+money(group.total)+'</strong></article>'}).join("")+'</div>':"";
+    summary.innerHTML=allCount?'<strong>Selected books · '+allCount+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+chosenByClass.map(function(group){return '<article class="class-detail"><header><span>'+group.name+'</span><b>'+group.bookCount+' books</b><strong>Class total '+money(group.total)+'</strong></header><ol>'+group.details.map(function(r){return '<li><span>'+r.subject+'</span><b>'+r.series+'</b><strong>'+money(r.price)+'</strong></li>'}).join("")+'</ol></article>'}).join("")+'</div>':"";
     var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir"];
-    chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.items.length+" books · subtotal ₹"+group.total.toLocaleString("en-IN"));group.items.forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
+    chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.bookCount+" books · class total ₹"+group.total.toLocaleString("en-IN"));group.details.forEach(function(r){message.push("• "+r.subject+" — "+r.series+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
     if(!allCount)message.push("No books selected yet. Select books from each class tab to build the complete list.");
     message.push("","ALL CLASSES TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
     var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send all selected classes on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
