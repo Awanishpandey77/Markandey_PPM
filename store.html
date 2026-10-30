@@ -43,4 +43,29 @@ function classIndex(){const n=parseInt(cls.value,10);return Number.isFinite(n)?n
 function renderBooks(){const n=classIndex(),tbody=document.getElementById('bookRows'),publisher=pub.value,series=ser.value;tbody.replaceChildren();let sum=0;subjects.forEach((subject,i)=>{const base=95+n*13+i*9+(publishers.indexOf(publisher)%4)*11+(Array.from(series).reduce((a,c)=>a+c.charCodeAt(0),0)%17);sum+=base;const tr=document.createElement('tr');tr.innerHTML=`<td>${subject}</td><td>${publisher} · ${series} — ${subject} Book</td><td class="price">₹${base}</td>`;tbody.append(tr)});const cl=cls.value==='Nursery'?'Nursery':cls.value==='LKG'?'LKG':cls.value==='UKG'?'UKG':`Class ${cls.value}`;document.getElementById('catalogTitle').textContent=`${cl} · ${publisher} · ${series}`;document.getElementById('setCost').textContent=sum.toLocaleString('en-IN');const msg=`Hello, please confirm availability and current prices for the ${cl} ${publisher} ${series} sample book set (displayed estimate ₹${sum}).`;document.getElementById('bookEnquiry').href=`https://wa.me/919500694579?text=${encodeURIComponent(msg)}`}
 pub.addEventListener('change',updateSeries);ser.addEventListener('change',renderBooks);cls.addEventListener('change',renderBooks);document.getElementById('year').textContent=new Date().getFullYear();updateSeries();
 </script>
+<script>
+// Arrange the catalogue filters in the requested order: publisher, series, class.
+const filterPanel=document.querySelector('.filters');
+filterPanel.append(document.getElementById('classSelect').closest('label'));
+document.querySelector('#books h2').textContent='Choose a publisher, series and class.';
+document.querySelector('#books .lede').textContent='Set your filters in this order: publisher, book series, then class. Select or clear individual subjects to build the exact list you want to view.';
+const allSubjects=[...subjects];
+const subjectPanel=document.createElement('div');
+subjectPanel.className='subject-picker';
+subjectPanel.innerHTML='<div class="subject-heading"><strong>Choose subjects to include</strong><div class="subject-actions"><button class="text-button" type="button" data-subject-action="all">Select all</button><button class="text-button" type="button" data-subject-action="none">Clear all</button></div></div><div class="subject-options"></div>';
+const style=document.createElement('style');
+style.textContent='.subject-picker{background:#fff;border:1px solid #efd9af;border-radius:15px;padding:16px;margin:0 0 20px}.subject-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.subject-heading strong{font-size:12px}.subject-actions{display:flex;gap:8px}.text-button{border:1px solid #e4cfaa;border-radius:99px;background:#fffaf0;padding:7px 11px;color:#72481a;font-size:10px;font-weight:700;cursor:pointer}.subject-options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.subject-option{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid #f0e3cb;border-radius:9px;background:#fffdf8;font-size:11px;line-height:1.35}.subject-option input{accent-color:#a74312}@media(max-width:540px){.subject-options{grid-template-columns:repeat(2,1fr)}}';
+document.head.append(style);
+const subjectGrid=subjectPanel.querySelector('.subject-options');
+allSubjects.forEach((name,index)=>{const label=document.createElement('label');label.className='subject-option';label.innerHTML=`<input type="checkbox" checked value="${index}"><span>${name}</span>`;subjectGrid.append(label)});
+filterPanel.after(subjectPanel);
+const subjectInputs=[...subjectGrid.querySelectorAll('input')];
+function syncSubjectList(){const chosen=subjectInputs.filter(input=>input.checked).map(input=>allSubjects[Number(input.value)]);subjects.splice(0,subjects.length,...chosen);renderBooks();const badge=document.querySelector('#books .badge');badge.textContent=`${chosen.length} selected sample subjects · prices in ₹`;if(!chosen.length){const row=document.createElement('tr');row.innerHTML='<td colspan="3">No subjects selected. Select one or more subjects above to build your list.</td>';document.getElementById('bookRows').append(row)}}
+function syncCatalogueTitle(){const className=cls.options[cls.selectedIndex].textContent;document.getElementById('catalogTitle').textContent=`${pub.value} · ${ser.value} · ${className}`}
+subjectInputs.forEach(input=>input.addEventListener('change',syncSubjectList));
+subjectPanel.querySelector('[data-subject-action="all"]').addEventListener('click',()=>{subjectInputs.forEach(input=>input.checked=true);syncSubjectList()});
+subjectPanel.querySelector('[data-subject-action="none"]').addEventListener('click',()=>{subjectInputs.forEach(input=>input.checked=false);syncSubjectList()});
+[pub,ser,cls].forEach(select=>select.addEventListener('change',syncCatalogueTitle));
+syncSubjectList();syncCatalogueTitle();
+</script>
 </body></html>
