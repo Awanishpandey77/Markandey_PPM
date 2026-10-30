@@ -1,20 +1,11 @@
-# Markandey Pandey Pustak Mandir — website design demos
+# Markandey Pandey Pustak Mandir · Multi-school website concepts
 
-Open `index.html` to browse ten responsive design concepts. Each concept is a separate HTML page (`design-01.html` through `design-10.html`) and includes the same class-focused learning portal.
+Open `index.html` for the showcase of ten school concepts. Each `school-01.html` through `school-10.html` has its own name, sample photography and page composition. The original Cursor-created Aarohan demo remains available as `demo.html` when these files are copied to the GitHub repository.
 
-## Included
+The school concepts use intentionally different layouts: editorial, dark STEM dashboard, colourful bento, glass/orbit, heritage, nature-led, high-contrast, storybook, Nordic minimal and arts collage. All share class resources, searchable sample books, subject filters, responsive navigation, print-to-PDF, gallery, notices, Maps search, English/Hindi controls, dark/light mode and WhatsApp enquiry buttons.
 
-- Nursery, LKG, UKG and Classes 1–12, with class-band and subject filters
-- Searchable sample book catalogue, illustrated covers and clearly marked sample prices
-- Print / Save as PDF through the browser’s print dialog
-- Class-material links are placeholders until official URLs or PDFs are supplied
-- Sample campus photography, click-to-enlarge gallery and sample notices
-- WhatsApp enquiry links using the number provided
-- Google Maps search/embed; add a verified address to point directions to the campus
-- English/Hindi control, dark/light mode, animated counters and responsive mobile navigation
+## Keep the folder structure
 
-## Preview and publishing
+For GitHub Pages, put `index.html`, the ten `school-*.html` pages, and `assets/` at the repository root. `assets/site.css`, `assets/layouts.css` and `assets/site.js` are shared by the pages. Keep the original `demo.html` alongside them if you want the original Cursor site linked in the gallery.
 
-Open `index.html` in a browser. To publish on GitHub Pages, upload the entire project folder, including `assets/`, to the repository. Keep `index.html` at the repository root and set Pages to publish from the `main` branch and `/` root.
-
-School details, prices, photos, and notices are illustrative samples. Replace them with approved information before public use. The WhatsApp button opens a prefilled message; the visitor sends it from WhatsApp.
+Names, locations, prices, notices, statistics, principal portraits and photographs are illustrative sample content. Book and PDF links are placeholders because no official materials were supplied. Replace sample information and set each school's correct WhatsApp number and address before using these as live sites.
