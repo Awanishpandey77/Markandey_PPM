@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#241306">
 <meta name="description" content="Class-wise subject and book-series rates from the supplied Magic Mind, Galaxy and Coral publisher catalogues.">
 <title>Class-wise book rate matrix | Markandey Pandey Pustak Mandir</title>
-<link rel="stylesheet" href="assets/rate-matrix.css">
+<link rel="stylesheet" href="assets/rate-matrix.css?v=selection-summary-1">
 </head>
 <body>
 <header class="topbar">
@@ -31,8 +31,8 @@
       <div><span id="classEyebrow" class="overline">CLASS 1 RATE MATRIX</span><h2 id="matrixTitle">All subjects and series</h2><p id="matrixCount"></p></div>
       <div class="actions"><button id="downloadCsv" class="button secondary" type="button">Download CSV ↓</button><button id="printMatrix" class="button secondary" type="button">Print / Save PDF</button></div>
     </div>
-    <div id="publisherTotals" class="publisher-totals"></div>
-    <div class="matrix-select-tools"><strong id="selectionSummary">0 books selected · ₹0</strong><button id="selectAllRates" class="button secondary" type="button">Select all shown</button><button id="clearRateSelection" class="button secondary" type="button">Unselect all</button></div>
+    <div class="matrix-select-tools"><button id="selectAllRates" class="button secondary" type="button">Select all shown</button><button id="clearRateSelection" class="button secondary" type="button">Unselect all</button></div>
+    <div id="selectionSummary" class="selection-summary" hidden></div>
     <div class="table-scroll">
       <table>
         <thead><tr><th>Select</th><th>Publisher</th><th>Book series / title</th><th>Subject</th><th class="rate-col">Class rate</th></tr></thead>
@@ -49,6 +49,6 @@
 </main>
 <footer><span>Markandey Pandey Pustak Mandir · Gorakhpur</span><a href="store.html">Back to the store ↗</a></footer>
 <script src="assets/catalog-data.js?v=matrix-select-1"></script>
-<script src="assets/rate-matrix.js?v=matrix-select-1"></script>
+<script src="assets/rate-matrix.js?v=selection-summary-1"></script>
 </body>
 </html>

@@ -49,18 +49,15 @@
     document.getElementById("classEyebrow").textContent=className.toUpperCase()+" RATE MATRIX";
     document.getElementById("matrixTitle").textContent="All subjects and series";
     document.getElementById("matrixCount").textContent=list.length+" catalogue entries · "+list.filter(function(x){return x.price!=null}).length+" rates listed for "+className;
-    document.getElementById("publisherTotals").innerHTML=pubs.filter(function(pub){return selectedPublisher==="all"||pub===selectedPublisher}).map(function(pub){
-      var entries=list.filter(function(x){return x.publisher===pub});
-      if(!entries.length)return "";
-      var priced=entries.filter(function(x){return x.price!=null}),total=priced.reduce(function(sum,x){return sum+Number(x.price)},0);
-      return '<article class="total-card"><span>'+pub+'</span><strong>'+money(total)+'</strong><small>'+priced.length+' listed rates · '+entries.length+' series</small></article>';
-    }).join("");
+    document.getElementById("publisherTotals").innerHTML="";
     rows.innerHTML=list.map(function(r){
       return '<tr><td data-label="Select"><input class="rate-select" type="checkbox" data-rate-key="'+encodeURIComponent(r.key)+'" '+(selectedSet().has(r.key)?"checked":"")+' aria-label="Select '+r.series+'"></td><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
     }).join("")||'<tr><td class="empty" colspan="5">No matching catalogue rows. Try another subject or publisher.</td></tr>';
     var chosen=allRows().filter(function(r){return selectedSet().has(r.key)&&r.price!=null});
     var chosenTotal=chosen.reduce(function(sum,r){return sum+Number(r.price)},0);
-    document.getElementById("selectionSummary").textContent=chosen.length+" books selected · "+money(chosenTotal);
+    var summary=document.getElementById("selectionSummary");
+    summary.hidden=!chosen.length;
+    summary.innerHTML=chosen.length?'<strong>Selected books · '+chosen.length+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+pubs.map(function(pub){var group=chosen.filter(function(r){return r.publisher===pub});if(!group.length)return "";var subtotal=group.reduce(function(sum,r){return sum+Number(r.price)},0);return '<article><span>'+pub+'</span><b>'+group.length+' '+(group.length===1?'book':'books')+'</b><strong>MRP '+money(subtotal)+'</strong></article>'}).join("")+'</div>':"";
     var message=["Class-wise catalogue rate list — Markandey Pandey Pustak Mandir",className];
     chosen.forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))});
     if(!chosen.length)message.push("No books selected yet. Select rows on the page to build the list.");
