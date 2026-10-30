@@ -49,6 +49,7 @@
     document.getElementById("matrixCount").textContent=list.length+" catalogue entries · "+list.filter(function(x){return x.price!=null}).length+" rates listed for "+className;
     document.getElementById("publisherTotals").innerHTML=pubs.filter(function(pub){return selectedPublisher==="all"||pub===selectedPublisher}).map(function(pub){
       var entries=list.filter(function(x){return x.publisher===pub});
+      if(!entries.length)return "";
       var priced=entries.filter(function(x){return x.price!=null}),total=priced.reduce(function(sum,x){return sum+Number(x.price)},0);
       return '<article class="total-card"><span>'+pub+'</span><strong>'+money(total)+'</strong><small>'+priced.length+' listed rates · '+entries.length+' series</small></article>';
     }).join("");
