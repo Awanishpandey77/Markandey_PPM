@@ -62,11 +62,17 @@
     var allCount=chosenByClass.reduce(function(sum,x){return sum+x.bookCount},0);
     summary.hidden=!allCount;
     summary.innerHTML=allCount?'<strong>Selected books · '+allCount+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+chosenByClass.map(function(group){return '<article class="class-detail"><header><span>'+group.name+'</span><b>'+group.bookCount+' books</b><strong>Class total '+money(group.total)+'</strong></header><ol>'+group.details.map(function(r){return '<li><span>'+r.subject+'</span><b>'+r.series+'</b><strong>'+money(r.price)+'</strong></li>'}).join("")+'</ol></article>'}).join("")+'</div>':"";
-    var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir"];
+    var schoolName=document.getElementById("schoolName").value.trim();
+    var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir","School: "+(schoolName||"Not provided")];
     chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.bookCount+" books · class total ₹"+group.total.toLocaleString("en-IN"));group.details.forEach(function(r){message.push("• "+r.subject+" — "+r.series+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
     if(!allCount)message.push("No books selected yet. Select books from each class tab to build the complete list.");
     message.push("","ALL CLASSES TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
-    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send all selected classes on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
+    var rawNumber=document.getElementById("recipientNumber").value.replace(/\D/g,"");
+    var targetNumber=rawNumber.length===10?"91"+rawNumber:rawNumber;
+    var validNumber=targetNumber.length>=11&&targetNumber.length<=15;
+    var hint=document.getElementById("whatsappHint");
+    hint.textContent=!schoolName?"Enter the school name to prepare the message.":!validNumber?"Enter a valid WhatsApp number, including country code if outside India.":"Ready to open WhatsApp with the school name and selected class lists.";
+    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Open message in WhatsApp ↗";wa.href=schoolName&&validNumber?"https://wa.me/"+targetNumber+"?text="+encodeURIComponent(message.join("\n")):"#";wa.setAttribute("aria-disabled",String(!(schoolName&&validNumber)));
   }
   classTabs.addEventListener("click",function(e){
     var b=e.target.closest("[data-class]");if(!b)return;className=b.dataset.class;
@@ -77,6 +83,8 @@
   rows.addEventListener("change",function(e){var input=e.target.closest("[data-rate-key]");if(!input)return;var key=decodeURIComponent(input.dataset.rateKey);input.checked?selectedSet().add(key):selectedSet().delete(key);render()});
   document.getElementById("selectAllRates").onclick=function(){filteredRows().forEach(function(r){if(r.price!=null)selectedSet().add(r.key)});render()};
   document.getElementById("clearRateSelection").onclick=function(){selectedSet().clear();render()};
+  document.getElementById("schoolName").addEventListener("input",render);
+  document.getElementById("recipientNumber").addEventListener("input",render);
   document.getElementById("printMatrix").onclick=function(){window.print()};
   document.getElementById("downloadCsv").onclick=function(){
     var lines=[["Publisher","Series / title","Subject",className+" rate (INR)"].join(",")];
