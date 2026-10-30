@@ -37,6 +37,7 @@
     });
     return out;
   }
+  function allRowsForClass(name){var previous=className;className=name;var result=allRows();className=previous;return result}
   function money(value){return value==null?"—":"₹"+Number(value).toLocaleString("en-IN")}
   function filteredRows(){
     var q=search.value.trim().toLowerCase();
@@ -52,17 +53,18 @@
     rows.innerHTML=list.map(function(r){
       return '<tr><td data-label="Select"><input class="rate-select" type="checkbox" data-rate-key="'+encodeURIComponent(r.key)+'" '+(selectedSet().has(r.key)?"checked":"")+' aria-label="Select '+r.series+'"></td><td data-label="Publisher"><span class="publisher-pill">'+r.publisher+'</span></td><td data-label="Series">'+r.series+'</td><td data-label="Subject">'+r.subject+'</td><td data-label="Class rate" class="rate-col '+(r.price==null?"missing":"")+'">'+money(r.price)+'</td></tr>';
     }).join("")||'<tr><td class="empty" colspan="5">No matching catalogue rows. Try another subject or publisher.</td></tr>';
+    var chosenByClass=classes.map(function(name){var set=selections.get(name)||new Set();var items=allRowsForClass(name).filter(function(r){return set.has(r.key)&&r.price!=null});return {name:name,items:items,total:items.reduce(function(sum,r){return sum+Number(r.price)},0)}}).filter(function(x){return x.items.length});
     var chosen=allRows().filter(function(r){return selectedSet().has(r.key)&&r.price!=null});
-    var chosenTotal=chosen.reduce(function(sum,r){return sum+Number(r.price)},0);
+    var chosenTotal=chosenByClass.reduce(function(sum,x){return sum+x.total},0);
     var summary=document.getElementById("selectionSummary");
-    summary.hidden=!chosen.length;
-    summary.innerHTML=chosen.length?'<strong>Selected books · '+chosen.length+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+pubs.map(function(pub){var group=chosen.filter(function(r){return r.publisher===pub});if(!group.length)return "";var subtotal=group.reduce(function(sum,r){return sum+Number(r.price)},0);return '<article><span>'+pub+'</span><b>'+group.length+' '+(group.length===1?'book':'books')+'</b><strong>MRP '+money(subtotal)+'</strong></article>'}).join("")+'</div>':"";
-    var message=["Class-wise catalogue rate list — Markandey Pandey Pustak Mandir",className];
-    chosen.forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))});
-    if(!chosen.length)message.push("No books selected yet. Select rows on the page to build the list.");
-    message.push("SELECTED TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
-    message.push("Publisher totals are catalogue sums; please confirm the school’s adopted books and current rates.");
-    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send "+className+" selected list on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
+    var allCount=chosenByClass.reduce(function(sum,x){return sum+x.items.length},0);
+    summary.hidden=!allCount;
+    summary.innerHTML=allCount?'<strong>Selected books · '+allCount+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+chosenByClass.map(function(group){return '<article><span>'+group.name+'</span><b>'+group.items.length+' '+(group.items.length===1?'book':'books')+'</b><strong>Class total '+money(group.total)+'</strong></article>'}).join("")+'</div>':"";
+    var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir"];
+    chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.items.length+" books · subtotal ₹"+group.total.toLocaleString("en-IN"));group.items.forEach(function(r){message.push(r.publisher+" | "+r.series+" | "+r.subject+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
+    if(!allCount)message.push("No books selected yet. Select books from each class tab to build the complete list.");
+    message.push("","ALL CLASSES TOTAL: ₹"+chosenTotal.toLocaleString("en-IN"));
+    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Send all selected classes on WhatsApp ↗";wa.href="https://wa.me/919500694579?text="+encodeURIComponent(message.join("\n"));
   }
   classTabs.addEventListener("click",function(e){
     var b=e.target.closest("[data-class]");if(!b)return;className=b.dataset.class;
