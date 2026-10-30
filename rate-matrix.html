@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#241306">
+<meta name="description" content="Class-wise subject and book-series rates from the supplied Magic Mind, Galaxy and Coral publisher catalogues.">
+<title>Class-wise book rate matrix | Markandey Pandey Pustak Mandir</title>
+<link rel="stylesheet" href="assets/rate-matrix.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">MP</span><span>MARKANDEY PANDEY PUSTAK MANDIR<small>CLASS-WISE RATE MATRIX</small></span></a>
+  <nav><a href="store.html#books">Book builder</a><a href="index.html">Main page</a></nav>
+</header>
+<main id="matrixApp" class="page-shell">
+  <section class="intro">
+    <p class="overline">2026–27 · PUBLISHER CATALOGUES</p>
+    <h1>One class at a time.<br><em>Every listed subject and rate.</em></h1>
+    <p>Choose Class 1–8 to view the subject, book series, publisher and printed price from all three supplied catalogs.</p>
+  </section>
+  <section class="matrix-panel" aria-label="Class-wise rate matrix">
+    <div class="toolbar">
+      <div><span class="label">SELECT CLASS</span><div id="classTabs" class="class-tabs"></div></div>
+      <div class="tools">
+        <label class="search"><span class="label">FIND A SUBJECT OR SERIES</span><input id="searchRates" type="search" placeholder="e.g. Computer, Maths, Hindi"></label>
+        <label class="publisher-filter"><span class="label">PUBLISHER</span><select id="publisherFilter"><option value="all">All publishers</option></select></label>
+      </div>
+    </div>
+    <div class="matrix-heading">
+      <div><span id="classEyebrow" class="overline">CLASS 1 RATE MATRIX</span><h2 id="matrixTitle">All subjects and series</h2><p id="matrixCount"></p></div>
+      <div class="actions"><button id="downloadCsv" class="button secondary" type="button">Download CSV ↓</button><button id="printMatrix" class="button secondary" type="button">Print / Save PDF</button></div>
+    </div>
+    <div id="publisherTotals" class="publisher-totals"></div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Publisher</th><th>Book series / title</th><th>Subject</th><th class="rate-col">Class rate</th></tr></thead>
+        <tbody id="rateRows"></tbody>
+      </table>
+    </div>
+    <p class="fineprint">A dash means the supplied catalog does not show a rate for that class. Publisher totals above add only the listed series rates for that publisher; they are a catalogue sum, not a confirmed school book set. Check the original PDF for the printed page, edition, availability and current price.</p>
+    <div class="whatsapp-row"><div><b>Need this class list as a message?</b><span>Build a WhatsApp enquiry with all currently listed rows.</span></div><a id="matrixWhatsApp" class="button gold" href="#" target="_blank" rel="noopener">Send Class 1 list on WhatsApp ↗</a></div>
+  </section>
+  <section class="source-section">
+    <div><span class="overline">SOURCE CATALOGUES</span><h2>Open the original rate pages.</h2><p>Each rate above is tied to a title in one of these supplied publications.</p></div>
+    <div id="sourceLinks" class="source-links"></div>
+  </section>
+</main>
+<footer><span>Markandey Pandey Pustak Mandir · Gorakhpur</span><a href="store.html">Back to the store ↗</a></footer>
+<script src="assets/catalog-data.js"></script>
+<script src="assets/rate-matrix.js"></script>
+</body>
+</html>

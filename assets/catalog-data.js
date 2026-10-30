@@ -9,6 +9,8 @@
     "Magic Mind":[
       {n:"Pebbles of Grammar",s:"English grammar",p:[190,240,250,290,360,400,440,450]},
       {n:"Infopedia",s:"General Knowledge",p:[170,180,180,200,220,240,250,260]},
+      {n:"Manasvi Hindi Pathya Pustak",s:"Hindi",p:[240,290,320,340,360,370,380,399]},
+      {n:"Manasvi Hindi Vyakaran Pathya Pustak",s:"Hindi grammar",p:[190,220,250,290,320,340,380,425]},
       {n:"Cosmos Beyond",s:"Science",p:[290,320,340,390,460,480,520,540]},
       {n:"Readquest English",s:"English reader",p:[260,280,310,330,360,380,410,440]},
       {n:"Exploring Our Society & World · Part 1",s:"Social Studies",p:[240,270,320,360,440,480,380,380]},
@@ -31,7 +33,8 @@
       {n:"Olympiad Maths",s:"Mathematics",p:[380,430,460,480,520,540,550,580]},
       {n:"Science for Everyone",s:"Science",p:[295,330,370,410,450,530,550,570]},
       {n:"Concept Based General Knowledge",s:"General Knowledge",p:[190,220,240,260,260,280,280,280]},
-      {n:"Hindi Bhasha / Vyakaran",s:"Hindi",p:[220,240,270,310,330,340,360,380]}
+      {n:"Hindi Bhasha Pathya Pustak",s:"Hindi",p:[260,280,300,320,340,360,370,380]},
+      {n:"Hindi Vyakaran",s:"Hindi grammar",p:[220,240,270,310,330,340,360,380]}
     ],
     "Coral Publication":[
       {n:"Nursery Kit Set",s:"Full class kit",p:{Nursery:1985}},
@@ -43,11 +46,16 @@
       {n:"Connect with Computer",s:"Computer",p:[290,300,320,360,380,460,480,480]},
       {n:"Art & Craft",s:"Art & Craft",p:[200,200,200,220,220,260,290,320]},
       {n:"My Favourite Book of General Knowledge",s:"General Knowledge",p:[220,240,260,270,280,290,310,330]},
+      {n:"Basic Mathematics",s:"Mathematics",p:[380,430,490,510,530]},
       {n:"Periwinkle · A Book of Science & Life",s:"Science",p:[320,360,385,440,480,560,599,599]},
       {n:"Social Studies",s:"Social Studies",p:[320,340,360,385,395,490,495,530]},
+      {n:"Swarmini Hindi Pathya Pustak",s:"Hindi",p:[280,320,340,360,390,425,450,480]},
+      {n:"Swarmini Hindi Vyakaran",s:"Hindi grammar",p:[280,300,320,340,360,380,480,480]},
+      {n:"Sanskrit Shri Pathya Pustak",s:"Sanskrit",p:[200,220,240,260,280,300,320,320]},
       {n:"Eco Tour · A Book of EVS",s:"Environmental Studies",p:[340,360,390,415,440]}
     ]
   };
+  window.MPPM_RATE_DATA=series;
   var classes=["Nursery","LKG","UKG"];
   for(var i=1;i<=12;i++)classes.push("Class "+i);
   var wrap=document.querySelector("#books .wrap");
