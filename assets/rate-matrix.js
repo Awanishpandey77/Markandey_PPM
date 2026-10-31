@@ -62,6 +62,9 @@
     var allCount=chosenByClass.reduce(function(sum,x){return sum+x.bookCount},0);
     summary.hidden=!allCount;
     summary.innerHTML=allCount?'<strong>Selected books · '+allCount+' · '+money(chosenTotal)+'</strong><div class="selection-publishers">'+chosenByClass.map(function(group){return '<article class="class-detail"><header><span>'+group.name+'</span><b>'+group.bookCount+' books</b><strong>Class total '+money(group.total)+'</strong></header><ol>'+group.details.map(function(r){return '<li><span>'+r.subject+'</span><b>'+r.series+'</b><strong>'+money(r.price)+'</strong></li>'}).join("")+'</ol></article>'}).join("")+'</div>':"";
+    document.getElementById("contractSchool").textContent=schoolName||"To be entered";
+    document.getElementById("contractGrandTotal").textContent=money(chosenTotal);
+    document.getElementById("contractBookList").innerHTML=chosenByClass.length?chosenByClass.map(function(group){return '<h4>'+group.name+' · Class total '+money(group.total)+'</h4><table><thead><tr><th>Subject</th><th>Book / series</th><th>Rate (₹)</th></tr></thead><tbody>'+group.details.map(function(r){return '<tr><td>'+r.subject+'</td><td>'+r.series+'</td><td class="rate-col">'+money(r.price)+'</td></tr>'}).join("")+'</tbody></table>'}).join(""):'<p>No books selected. Select class items before printing the agreement.</p>';
     var schoolName=document.getElementById("schoolName").value.trim();
     var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir","School: "+(schoolName||"Not provided")];
     chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.bookCount+" books · class total ₹"+group.total.toLocaleString("en-IN"));group.details.forEach(function(r){message.push("• "+r.subject+" — "+r.series+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
