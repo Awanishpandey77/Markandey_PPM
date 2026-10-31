@@ -20,6 +20,7 @@
     <p>Choose Nursery, LKG, UKG or Class 1–8 to view the subject, book series, publisher and printed price from all three supplied catalogs.</p>
   </section>
   <section class="matrix-panel" aria-label="Class-wise rate matrix">
+    <div class="school-recipient-fields"><label>School name<input id="schoolName" type="text" placeholder="Enter school name" autocomplete="organization"></label><label>School WhatsApp phone number<input id="recipientNumber" type="tel" inputmode="tel" placeholder="10-digit number or country code" autocomplete="tel"></label><small id="whatsappHint" aria-live="polite"></small></div>
     <div class="toolbar">
       <div><span class="label">SELECT CLASS</span><div id="classTabs" class="class-tabs"></div></div>
       <div class="tools">
@@ -27,7 +28,6 @@
         <label class="publisher-filter"><span class="label">PUBLISHER</span><select id="publisherFilter"><option value="all">All publishers</option></select></label>
       </div>
     </div>
-    <div class="school-recipient-fields"><label>School name<input id="schoolName" type="text" placeholder="Enter school name" autocomplete="organization"></label><label>WhatsApp number<input id="recipientNumber" type="tel" inputmode="tel" placeholder="10-digit number or country code" autocomplete="tel"></label><small id="whatsappHint" aria-live="polite"></small></div>
     <div class="matrix-heading">
       <div><span id="classEyebrow" class="overline">CLASS 1 RATE MATRIX</span><h2 id="matrixTitle">All subjects and series</h2><p id="matrixCount"></p></div>
       <div class="actions"><button id="downloadCsv" class="button secondary" type="button">Download CSV ↓</button><button id="printMatrix" class="button secondary" type="button">Print / Save PDF</button></div>
@@ -50,6 +50,6 @@
 </main>
 <footer><span>Markandey Pandey Pustak Mandir · Gorakhpur</span><a href="store.html">Back to the store ↗</a></footer>
 <script src="assets/catalog-data.js?v=kit-detail-1"></script>
-<script src="assets/rate-matrix.js?v=school-fields-top-1"></script>
+<script src="assets/rate-matrix.js?v=fields-above-classes-1"></script>
 </body>
 </html>
