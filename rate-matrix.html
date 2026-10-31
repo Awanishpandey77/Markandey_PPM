@@ -27,6 +27,7 @@
         <label class="publisher-filter"><span class="label">PUBLISHER</span><select id="publisherFilter"><option value="all">All publishers</option></select></label>
       </div>
     </div>
+    <div class="school-recipient-fields"><label>School name<input id="schoolName" type="text" placeholder="Enter school name" autocomplete="organization"></label><label>WhatsApp number<input id="recipientNumber" type="tel" inputmode="tel" placeholder="10-digit number or country code" autocomplete="tel"></label><small id="whatsappHint" aria-live="polite"></small></div>
     <div class="matrix-heading">
       <div><span id="classEyebrow" class="overline">CLASS 1 RATE MATRIX</span><h2 id="matrixTitle">All subjects and series</h2><p id="matrixCount"></p></div>
       <div class="actions"><button id="downloadCsv" class="button secondary" type="button">Download CSV ↓</button><button id="printMatrix" class="button secondary" type="button">Print / Save PDF</button></div>
@@ -40,7 +41,7 @@
       </table>
     </div>
     <p class="fineprint">A dash means the supplied catalog does not show a rate for that class. Select the books you want to include, then send the selected titles and total by WhatsApp. Check the original PDF for edition, availability and current price.</p>
-    <div class="whatsapp-row"><div><b>Prepare a WhatsApp enquiry</b><span>Enter the school and recipient number. The selected class lists and totals will be included.</span><div class="whatsapp-fields"><label>School name<input id="schoolName" type="text" placeholder="Enter school name" autocomplete="organization"></label><label>Recipient WhatsApp number<input id="recipientNumber" type="tel" inputmode="tel" placeholder="10-digit number or country code" autocomplete="tel"></label></div><small id="whatsappHint" aria-live="polite"></small></div><a id="matrixWhatsApp" class="button gold" href="#" target="_blank" rel="noopener">Open message in WhatsApp ↗</a></div>
+    <div class="whatsapp-row"><div><b>Ready to send your enquiry?</b><span>The message will include the school name, WhatsApp recipient, selected books and totals.</span></div><a id="matrixWhatsApp" class="button gold" href="#" target="_blank" rel="noopener">Open message in WhatsApp ↗</a></div>
   </section>
   <section class="source-section">
     <div><span class="overline">SOURCE CATALOGUES</span><h2>Open the original rate pages.</h2><p>Each rate above is tied to a title in one of these supplied publications.</p></div>
@@ -49,6 +50,6 @@
 </main>
 <footer><span>Markandey Pandey Pustak Mandir · Gorakhpur</span><a href="store.html">Back to the store ↗</a></footer>
 <script src="assets/catalog-data.js?v=kit-detail-1"></script>
-<script src="assets/rate-matrix.js?v=school-recipient-1"></script>
+<script src="assets/rate-matrix.js?v=school-fields-top-1"></script>
 </body>
 </html>
