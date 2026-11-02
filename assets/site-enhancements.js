@@ -41,7 +41,7 @@
   function apply(){
     var t=strings[current], nav=document.querySelectorAll("#links a");
     nav.forEach(function(a,i){if(i<5)a.textContent=t["nav"+i]});
-    var set=function(sel,key){var el=document.querySelector(sel);if(el)el.textContent=t[key]};
+    var set=function(sel,key){var el=document.querySelector(sel);if(el)el.textContent=(current==="en"&&el.dataset.en)||t[key]};
     set(".admission-ribbon strong","admission");set(".admission-ribbon span","admissionCopy");set(".admission-ribbon a","enquire");
     set(".resource-top h2","resourceTitle");set("#print","print");set(".year-panel h3","choose");
     var search=document.getElementById("search");if(search)search.placeholder=t.search;
