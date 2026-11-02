@@ -4,6 +4,7 @@
     var saved=localStorage.getItem("mppm-demo-theme");
     if(saved==="dark")body.classList.add("dark-mode");
     if(saved==="light")body.classList.add("light-mode");
+    if(!saved&&(id==="02"||id==="09"))body.classList.add("dark-mode");
   } catch(e) {}
   var mode=document.getElementById("mode");
   if(mode){

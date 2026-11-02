@@ -231,8 +231,18 @@
   });
   document.querySelectorAll('a[href="#welcome"],a[href="#visit"]').forEach(function (link) { link.href = "#campus"; });
   document.querySelectorAll('a[href="#gallery"],a[href="#notices"]').forEach(function (link) { link.href = "#highlights"; });
-  var locationName = "Khajani, Gorakhpur, Uttar Pradesh";
-  var locationNameHi = "खजनी, गोरखपुर, उत्तर प्रदेश";
+  var localityEn = {
+    "01": "Khajani", "02": "Rapti Nagar", "03": "Kusumhi",
+    "04": "Ramgarh Taal", "05": "Gorakhnath", "06": "Khajani",
+    "07": "Betiahata", "08": "Geeta Vatika", "09": "Taramandal", "10": "Surajkund"
+  };
+  var localityHi = {
+    "01": "खजनी", "02": "राप्ती नगर", "03": "कुसम्ही",
+    "04": "रामगढ़ ताल", "05": "गोरखनाथ", "06": "खजनी",
+    "07": "बेतियाहाता", "08": "गीता वाटिका", "09": "तारामंडल", "10": "सूरजकुंड"
+  };
+  var locationName = (localityEn[id] || "Khajani") + ", Gorakhpur, Uttar Pradesh";
+  var locationNameHi = (localityHi[id] || "खजनी") + ", गोरखपुर, उत्तर प्रदेश";
   var englishStats = originalStats;
   var englishActivities = originalActivities;
   var englishAchievements = originalAchievements.map(function (item) { return item.title; });
@@ -326,7 +336,7 @@
         var coverTitle = cover.querySelector("b");
         var coverLabels = cover.querySelectorAll("span,small");
         if (coverTitle) coverTitle.textContent = displaySubject;
-        if (coverLabels[0]) coverLabels[0].textContent = "Khajani · " + (hi ? "नमूना संस्करण" : "SAMPLE EDITION");
+        if (coverLabels[0]) coverLabels[0].textContent = (hi ? localityHi[id] : localityEn[id]) + " · " + (hi ? "नमूना संस्करण" : "SAMPLE EDITION");
         if (coverLabels[1]) coverLabels[1].textContent = yearName(year) + " · " + (hi ? "अध्ययन श्रृंखला" : "LEARNING SERIES");
       }
       var price = card.querySelector(".book-bottom b small");
@@ -350,7 +360,7 @@
     if (description) description.content = hi ? profile.nameHi + " · खजनी, गोरखपुर · कक्षा सामग्री और विद्यार्थी जीवन का नमूना" : profile.name + " · Khajani, Gorakhpur · sample classes, materials and student life";
     setText(".brand b", hi ? profile.nameHi : profile.name);
     setText(".brand small", (hi ? locationNameHi : locationName) + (hi ? " · विद्यालय नमूना" : " · SCHOOL WEBSITE CONCEPT"));
-    setText(".hero .kicker", hi ? "खजनी · गोरखपुर · " + profile.taglineHi : profile.tagline + " · KHAJANI, GORAKHPUR");
+    setText(".hero .kicker", hi ? localityHi[id] + " · गोरखपुर · " + profile.taglineHi : profile.tagline + " · " + localityEn[id].toUpperCase() + ", GORAKHPUR");
     setText(".hero h1", hi ? profile.mottoHi : profile.motto);
     setText(".hero h1 + p", hi ? profile.leadHi : profile.lead);
     setText(".crest", profile.name.split(/\s+/).map(function (part) { return part.charAt(0); }).join("").slice(0, 3));
@@ -386,6 +396,7 @@
       setText(".material-strip button", lang.materialButton);
     }
     setText("#activities .section-title h2", hi ? profile.activityTitleHi : profile.activityTitle);
+    setText("#activities .section-title .kicker", hi ? "सीखने के नए रास्ते · " + profile.nameHi : profile.name + " · STUDENT LIFE");
     setText("#activities .section-title p", hi ? "कक्षा के बाहर सीखने के नमूना कार्यक्रम।" : "Sample programmes for learning beyond the classroom.");
     document.querySelectorAll("#activities .home-card").forEach(function (card, index) {
       var activity = hi ? profile.activitiesHi[index] : englishActivities[index];
@@ -393,10 +404,17 @@
       setText("#activities .home-card:nth-child(" + (index + 1) + ") h3", activity[0]);
       setText("#activities .home-card:nth-child(" + (index + 1) + ") p", activity[1]);
       setText("#activities .home-card:nth-child(" + (index + 1) + ") .kicker", hi ? "सीखने का नमूना कार्यक्रम" : profile.name.toUpperCase());
+      var activityImage = card.querySelector("img");
+      if (activityImage) activityImage.alt = (hi ? activity[0] + " · " + profile.nameHi : activity[0] + " at " + profile.name);
     });
     var galleryLabelsEn = ["Campus life", "Learning spaces", "Student activities", "Our community", "Creative work", "School moments"];
     var galleryLabelsHi = ["परिसर जीवन", "सीखने की जगह", "विद्यार्थी गतिविधियाँ", "हमारा समुदाय", "रचनात्मक काम", "विद्यालय के पल"];
+    setText("#highlights [data-segment='gallery'] .section-title .kicker", hi ? profile.nameHi + " · परिसर डायरी" : profile.name + " · CAMPUS JOURNAL");
+    setText("#highlights [data-segment='gallery'] .section-title h2", hi ? localityHi[id] + " की झलकियाँ।" : "Scenes from " + localityEn[id] + ".");
+    setText("#highlights [data-segment='gallery'] .section-title p", hi ? "विद्यालय जीवन और सीखने की जगहों की नमूना तस्वीरें।" : "Sample photographs of school life and learning spaces.");
     document.querySelectorAll(".photo-grid .gallery-photo span").forEach(function (node, index) { node.textContent = (hi ? galleryLabelsHi : galleryLabelsEn)[index] || ""; });
+    document.querySelectorAll(".photo-grid .gallery-photo img").forEach(function (img, index) { img.alt = (hi ? galleryLabelsHi : galleryLabelsEn)[index] + " · " + (hi ? profile.nameHi : profile.name); });
+    setText("#highlights .achievement-strip .section-title .kicker", hi ? profile.nameHi + " · विद्यार्थी उपलब्धियाँ" : profile.name + " · STUDENT HIGHLIGHTS");
     setText("#highlights .achievement-strip .section-title h2", hi ? profile.achievementsHi[0] : englishAchievements[0]);
     setText("#highlights .achievement-strip .section-title p", lang.highlightsCopy);
     document.querySelectorAll("#highlights .stats-strip span").forEach(function (node, index) {
@@ -411,6 +429,7 @@
       });
     });
     setText("#highlights [data-segment='notices'] .section-title h2", lang.highlights);
+    setText("#highlights [data-segment='notices'] .section-title .kicker", hi ? profile.nameHi + " · विद्यालय समाचार" : profile.name + " · WHAT’S HAPPENING");
     setText("#highlights [data-segment='notices'] .section-title p", hi ? "विद्यालय जीवन से जुड़ी नमूना गतिविधियाँ।" : "Sample activities from school life.");
     document.querySelectorAll("#highlights .notice").forEach(function (notice, index) {
       var activity = hi ? profile.activitiesHi[index] : englishActivities[index];
@@ -422,8 +441,9 @@
     setText("#campus .welcome p:not(.kicker)", hi ? profile.welcomeHi : originalWelcomeText);
     setText("#campus .welcome .kicker", hi ? "विद्यालय की ओर से" : "A welcome from the school");
     setText("#campus .welcome b", hi ? "विद्यालय का स्वागत संदेश · नमूना" : "A school welcome · sample message");
-    setText("#campus .maps-copy .kicker", lang.location);
-    setText("#campus .maps-copy h2", lang.locationTitle);
+    setText("#campus .maps-copy .kicker", hi ? localityHi[id] + " · विद्यालय स्थान" : localityEn[id].toUpperCase() + " · SCHOOL LOCATION");
+    setText("#campus .maps-copy h2", hi ? localityHi[id] + " में आपका स्वागत है।" : "Find us in " + localityEn[id] + ".");
+    setText("#campus .welcome .welcome-photo span", hi ? "प्रतिनिधि चित्र · नमूना" : "Representative portrait · sample");
     var location = document.querySelector("#campus .maps-copy p");
     if (location) location.innerHTML = "<b>" + (hi ? profile.nameHi : profile.name) + "</b><br>" + (hi ? locationNameHi : locationName) + "<br>" + lang.locationCopy;
     setText("#campus .maps-copy .btn", lang.directions);
@@ -441,12 +461,12 @@
   if (map) {
     var mapQuery = encodeURIComponent(profile.name + " " + locationName);
     map.src = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
-    map.title = "Sample location for " + profile.name + " in Khajani, Gorakhpur";
+    map.title = "Sample location for " + profile.name + " in " + localityEn[id] + ", Gorakhpur";
   }
   var directions = document.querySelector("#campus .maps-copy .btn");
   if (directions) directions.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(profile.name + " " + locationName);
   document.querySelectorAll("a[href*='wa.me']").forEach(function (link) {
-    link.href = "https://wa.me/919500694579?text=" + encodeURIComponent("Hello, I have an enquiry about " + profile.name + " in Khajani, Gorakhpur.");
+    link.href = "https://wa.me/919500694579?text=" + encodeURIComponent("Hello, I have an enquiry about " + profile.name + " in " + localityEn[id] + ", Gorakhpur.");
   });
   document.querySelectorAll("img").forEach(function (img) {
     if (img.closest(".hero")) img.alt = profile.imageAlt;
