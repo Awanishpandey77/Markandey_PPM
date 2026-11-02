@@ -266,7 +266,7 @@
       print: "Print / Save as PDF", price: "sample price", details: "View details ↗",
       materialTitle: "Class notes, worksheets and learning PDFs",
       materialNote: "Books, notes and worksheets · sample links only",
-      materialButton: "View class materials ↗", sample: "sample",
+      materialButton: "View class materials ↗", sample: "sample", learningTabs: ["Overview", "Reading list", "Practice", "Projects"],
       level: ["EARLY YEARS", "PRIMARY", "MIDDLE", "SECONDARY", "SENIOR"],
       highlights: "Projects & milestones", highlightsCopy: "Student work and activities from this sample school.",
       campus: "School & community", welcomeBy: "A welcome from the school",
@@ -285,7 +285,7 @@
       print: "प्रिंट / PDF में सेव करें", price: "नमूना मूल्य", details: "विवरण देखें ↗",
       materialTitle: "कक्षा नोट्स, अभ्यास पत्र और अध्ययन PDF",
       materialNote: "किताबें, नोट्स और वर्कशीट · केवल नमूना लिंक",
-      materialButton: "कक्षा सामग्री देखें ↗", sample: "नमूना",
+      materialButton: "कक्षा सामग्री देखें ↗", sample: "नमूना", learningTabs: ["परिचय", "पठन सूची", "अभ्यास", "परियोजनाएँ"],
       level: ["प्रारंभिक", "प्राथमिक", "मध्य", "माध्यमिक", "वरिष्ठ"],
       highlights: "परियोजनाएँ और उपलब्धियाँ", highlightsCopy: "इस नमूना विद्यालय के विद्यार्थियों के काम और गतिविधियाँ।",
       campus: "विद्यालय और समुदाय", welcomeBy: "विद्यालय की ओर से",
@@ -348,6 +348,20 @@
     });
     var empty = document.querySelector("#books .empty");
     if (empty) empty.textContent = hi ? "सामग्री नहीं मिली। दूसरा शब्द खोजें।" : "No matching books. Try a different search.";
+    setText("#learning-intro", hi ? profile.nameHi + " में " + yearName(year) + " की सीखने की सरल रूपरेखा। विषय चुनें, पठन सूची देखें या अभ्यास और परियोजना के विचार खोजें।" : "A simple guide to " + yearName(year) + " at " + profile.name + ". Start with a subject, browse the reading list, or explore practice and project ideas.");
+    document.querySelectorAll("[data-learning-tab]").forEach(function (tab, index) { tab.textContent = lang.learningTabs[index]; });
+    document.querySelectorAll("[data-learning-subject]").forEach(function (button) { button.childNodes[1].textContent = labelSubject(button.dataset.learningSubject); });
+    document.querySelectorAll("#practice-list .learning-row").forEach(function (row) {
+      var subject = row.querySelector("small"); if (subject) subject.textContent = labelSubject(row.dataset.subject || subject.textContent);
+      var heading = row.querySelector("h4"); if (heading) heading.textContent = hi ? labelSubject(row.dataset.subject || "") + " अभ्यास" : (row.dataset.subject || "") + " practice";
+      var copy = row.querySelector("p"); if (copy) copy.textContent = hi ? yearName(year) + " के लिए छोटे अभ्यास और दोहराव की गतिविधियाँ।" : "Short exercises and revision activities for " + yearName(year) + ".";
+    });
+    document.querySelectorAll("#project-list .learning-row").forEach(function (row) {
+      var english = row.dataset.subject || ""; var display = labelSubject(english);
+      var subject = row.querySelector("small"); if (subject) subject.textContent = display;
+      var heading = row.querySelector("h4"); if (heading) heading.textContent = hi ? display + " · दुनिया में" : english + " in the world";
+      var copy = row.querySelector("p"); if (copy) copy.textContent = hi ? display + " से जुड़ा कक्षा प्रश्न या छोटा प्रोजेक्ट।" : "A classroom question or small project connected to " + english.toLowerCase() + ".";
+    });
   }
 
   function applyLanguage(language) {
@@ -373,10 +387,11 @@
     }
     setText(".resource-top .kicker", hi ? "नर्सरी → कक्षा 12 · " + profile.resourceHi : "Nursery → Class 12 · " + profile.resource);
     setText(".resource-top h2", hi ? profile.resourceHi : profile.resource);
-    setText(".resource-top p", hi ? profile.nameHi + " की कक्षा सामग्री, पठन सूची और अभ्यास पत्र। कक्षा व विषय चुनकर नमूना सूची देखें।" : "Explore " + profile.name + " sample reading lists, class materials and worksheets.");
+    setText(".resource-top p", hi ? profile.nameHi + " का लर्निंग हब। कक्षा चुनें और विषय, पठन सूची तथा कक्षा गतिविधियाँ देखें।" : profile.name + " learning hub. Choose a year to see its subjects, reading list and class activities.");
     setText("#print", lang.print);
     setText(".year-panel h3", lang.choose);
-    setText(".book-heading p", hi ? "इस कक्षा की नमूना सूची · विषय चुनकर छाँटें।" : "Sample class list · choose a subject to filter.");
+    setText(".book-heading p", hi ? "कक्षा के विषय और सामग्री देखने के लिए एक टैब चुनें।" : "Choose a tab to explore this class’s subjects and resources.");
+    setText("#class-caption", hi ? yearName(classIndex()) + " · सीखने का क्षेत्र चुनें।" : yearName(classIndex()) + " · choose a learning area to explore.");
     var search = document.querySelector("#search");
     if (search) search.placeholder = lang.search;
     document.querySelectorAll("#bands [data-band]").forEach(function (button, index) { button.textContent = lang.bands[index]; });
@@ -388,7 +403,7 @@
     var index = classIndex();
     setText("#class-name", yearName(index));
     var band = index < 3 ? 0 : index < 8 ? 1 : index < 11 ? 2 : index < 13 ? 3 : 4;
-    setText("#level", lang.level[band] + (hi ? " · नमूना पुस्तक सूची" : " · SAMPLE BOOK LIST"));
+    setText("#level", lang.level[band] + (hi ? " · अध्ययन केंद्र" : " · LEARNING HUB"));
     var strip = document.querySelector(".material-strip");
     if (strip) {
       setText(".material-strip b", "📎 " + lang.materialTitle);
@@ -536,8 +551,9 @@
     var index = classIndex();
     var translated = yearName(index);
     if (classNameNode.textContent !== translated) classNameNode.textContent = translated;
+    setText("#class-caption", currentLanguage === "hi" ? yearName(index) + " · सीखने का क्षेत्र चुनें।" : yearName(index) + " · choose a learning area to explore.");
     var bandIndex = index < 3 ? 0 : index < 8 ? 1 : index < 11 ? 2 : index < 13 ? 3 : 4;
-    var levelText = t[currentLanguage].level[bandIndex] + (currentLanguage === "hi" ? " · नमूना पुस्तक सूची" : " · SAMPLE BOOK LIST");
+    var levelText = t[currentLanguage].level[bandIndex] + (currentLanguage === "hi" ? " · अध्ययन केंद्र" : " · LEARNING HUB");
     setText("#level", levelText);
   }).observe(classNameNode, { childList: true });
   applyLanguage("en");
