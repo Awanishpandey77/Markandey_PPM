@@ -409,9 +409,9 @@
     });
     var galleryLabelsEn = ["Campus life", "Learning spaces", "Student activities", "Our community", "Creative work", "School moments"];
     var galleryLabelsHi = ["परिसर जीवन", "सीखने की जगह", "विद्यार्थी गतिविधियाँ", "हमारा समुदाय", "रचनात्मक काम", "विद्यालय के पल"];
-    setText("#highlights [data-segment='gallery'] .section-title .kicker", hi ? profile.nameHi + " · परिसर डायरी" : profile.name + " · CAMPUS JOURNAL");
-    setText("#highlights [data-segment='gallery'] .section-title h2", hi ? localityHi[id] + " की झलकियाँ।" : "Scenes from " + localityEn[id] + ".");
-    setText("#highlights [data-segment='gallery'] .section-title p", hi ? "विद्यालय जीवन और सीखने की जगहों की नमूना तस्वीरें।" : "Sample photographs of school life and learning spaces.");
+    setText("[data-segment='gallery'] .section-title .kicker", hi ? profile.nameHi + " · परिसर डायरी" : profile.name + " · CAMPUS JOURNAL");
+    setText("[data-segment='gallery'] .section-title h2", hi ? localityHi[id] + " की झलकियाँ।" : "Scenes from " + localityEn[id] + ".");
+    setText("[data-segment='gallery'] .section-title p", hi ? "विद्यालय जीवन और सीखने की जगहों की नमूना तस्वीरें।" : "Sample photographs of school life and learning spaces.");
     document.querySelectorAll(".photo-grid .gallery-photo span").forEach(function (node, index) { node.textContent = (hi ? galleryLabelsHi : galleryLabelsEn)[index] || ""; });
     document.querySelectorAll(".photo-grid .gallery-photo img").forEach(function (img, index) { img.alt = (hi ? galleryLabelsHi : galleryLabelsEn)[index] + " · " + (hi ? profile.nameHi : profile.name); });
     setText("#highlights .achievement-strip .section-title .kicker", hi ? profile.nameHi + " · विद्यार्थी उपलब्धियाँ" : profile.name + " · STUDENT HIGHLIGHTS");
