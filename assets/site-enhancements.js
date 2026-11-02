@@ -48,7 +48,8 @@
     set("#activities .section-title h2","activities");set(".achievement-strip .section-title h2","achievements");
     set("#gallery .section-title h2","gallery");set("#notices .section-title h2","notices");
     set(".maps-copy h2","location");set(".contact-band h2","contact");set(".wa-button","whatsapp");
-    languageButton.textContent=current==="en"?"हिन्दी":"English";document.documentElement.lang=current;
+    if(window.applySchoolLanguage)window.applySchoolLanguage(current);
+    freshLang.textContent=current==="en"?"हिन्दी":"English";document.documentElement.lang=current;
     try{localStorage.setItem("mppm-demo-language",current)}catch(e){}
   }
   var freshLang=languageButton.cloneNode(true);languageButton.parentNode.replaceChild(freshLang,languageButton);
