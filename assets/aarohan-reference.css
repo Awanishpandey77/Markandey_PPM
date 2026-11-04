@@ -1,0 +1,72 @@
+/* Shared editorial polish inspired by the original Aarohan demo. School-specific
+   hero compositions, colors, photography and section order remain intact. */
+:root{--editorial-ink:#17231f;--editorial-muted:#65716a;--editorial-paper:#f5f2eb;--editorial-white:#fffefa;--editorial-green:#285b49;--editorial-line:#e6e2d8;--editorial-serif:'Playfair Display',Georgia,serif}
+body[data-layout]{font-family:'DM Sans',Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+body[data-layout] .header{background:color-mix(in srgb,var(--paper) 94%,transparent);border-color:var(--line)}
+body[data-layout] .nav{min-height:76px}
+body[data-layout] .brand b,body[data-layout] h1,body[data-layout] h2,body[data-layout] h3,body[data-layout] h4{font-family:var(--editorial-serif);letter-spacing:-.035em}
+body[data-layout] .hero-layout{padding-top:54px;padding-bottom:42px}
+body[data-layout] .hero h1{font-size:clamp(48px,6.2vw,80px);line-height:.99}
+body[data-layout] .hero-copy>p{font-size:15px;line-height:1.8;max-width:470px}
+body[data-layout] .hero .btn{min-height:46px;padding:13px 20px;font-size:12px;transition:transform .2s,background .2s}
+body[data-layout] .hero .btn:hover{transform:translateY(-2px)}
+body[data-layout] .section{padding-block:78px}
+body[data-layout] .section-title{align-items:end;margin-bottom:28px;gap:28px}
+body[data-layout] .section-title h2{font-size:clamp(34px,4.5vw,54px);line-height:1.05}
+body[data-layout] .section-title>p{max-width:440px;line-height:1.75}
+body[data-layout] .admission-ribbon{padding:15px 0}
+body[data-layout] .resources.section{background:var(--paper)}
+body[data-layout] #resources .resource-top{align-items:end;gap:24px;margin-bottom:30px}
+body[data-layout] #resources .resource-top h2{font-size:clamp(38px,5vw,60px);line-height:1.02}
+body[data-layout] #resources .catalog{align-items:start;gap:24px}
+body[data-layout] #resources .year-panel,body[data-layout] #resources .book-panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:none}
+body[data-layout] #resources .year-panel{padding:23px}
+body[data-layout] #resources .book-panel{padding:28px}
+body[data-layout] #resources .year-list button{appearance:none;border:1px solid transparent;border-radius:999px;background:var(--soft);color:var(--ink);padding:10px 11px;font:500 12px/1.3 'DM Sans',Arial,sans-serif;min-height:40px;transition:background .18s,color .18s,transform .18s}
+body[data-layout] #resources .year-list button:hover{transform:translateY(-1px)}
+body[data-layout] #resources .year-list button.active{background:var(--brand);color:var(--paper)}
+body[data-layout] #resources .book-heading{align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px}
+body[data-layout] #resources .learning-tabs button{min-height:42px}
+body[data-layout] #resources .learning-row{min-height:80px}
+body[data-layout] #resources .learning-row .book-copy h4,body[data-layout] #resources .learning-row>div>h4{font-size:18px;line-height:1.35}
+body[data-layout] #resources .learning-row .book-bottom{gap:14px}
+body[data-layout] .uniform-card,body[data-layout] .activity-card,body[data-layout] .notice,body[data-layout] .achievement,body[data-layout] .person{border-radius:20px;overflow:hidden}
+body[data-layout] .uniform-card{background:var(--surface);border:1px solid var(--line)}
+body[data-layout] .uniform-card img{object-fit:cover}
+body[data-layout] .photo-grid img,body[data-layout] .gallery img{border-radius:16px}
+body[data-layout] .maps-card{border-radius:24px;overflow:hidden}
+body[data-layout] .contact-band{padding-block:56px}
+body[data-layout] .footer{padding-block:28px}
+body[data-layout] .floating-school{max-width:calc(100vw - 32px);white-space:normal;text-align:center}
+body[data-layout] .year-list button,body[data-layout] .learning-subject,body[data-layout] .learning-tabs button{touch-action:manipulation}
+@media(max-width:760px){
+ body[data-layout] .wrap{width:calc(100% - 32px)}
+ body[data-layout] .nav{min-height:68px}
+ body[data-layout] .header .nav{position:relative}
+ body[data-layout] .nav-toggle{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--ink);font-size:20px}
+ body[data-layout] .links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:20;max-height:calc(100dvh - 100px);overflow:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:0 0 18px 18px;box-shadow:var(--shadow)}
+ body[data-layout] .links.open{display:grid}
+ body[data-layout] .links a{padding:11px 8px;font-size:13px}
+ body[data-layout] .links .contact-link{grid-column:1/-1;text-align:center}
+ body[data-layout] .hero-layout{padding-top:34px;padding-bottom:32px}
+ body[data-layout] .hero h1{font-size:clamp(42px,12.5vw,62px)}
+ body[data-layout] .hero-copy>p{font-size:14px}
+ body[data-layout] .section{padding-block:48px}
+ body[data-layout] .section-title{display:grid;grid-template-columns:1fr;align-items:start;gap:9px}
+ body[data-layout] #resources .resource-top{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:14px}
+ body[data-layout] #resources .catalog{grid-template-columns:minmax(0,1fr)!important;gap:16px}
+ body[data-layout] #resources .year-panel,body[data-layout] #resources .book-panel{border-radius:18px;padding:18px}
+ body[data-layout] #resources .year-panel{position:static}
+ body[data-layout] #resources .year-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ body[data-layout] #resources .learning-tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;border-bottom:1px solid var(--line);padding:0 0 9px}
+ body[data-layout] #resources .learning-tabs button{appearance:none;flex:0 0 auto;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--muted);padding:9px 13px;font:500 12px 'DM Sans',Arial,sans-serif;min-height:42px}
+ body[data-layout] #resources .learning-tabs button.active{background:var(--brand);color:var(--paper)}
+ body[data-layout] #resources .book-heading{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+ body[data-layout] #resources .learning-row{padding:16px 0}
+ body[data-layout] .uniform-grid,body[data-layout] .people-grid,body[data-layout] .achievement-grid{grid-template-columns:1fr}
+ body[data-layout] .maps-card{grid-template-columns:1fr}
+ body[data-layout] .footer-inner{align-items:flex-start;flex-direction:column;gap:10px}
+ body[data-layout] .contact-inner{gap:24px}
+}
+@media(max-width:390px){body[data-layout] #resources .year-list{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-layout] #resources .book-heading{grid-template-columns:1fr}body[data-layout] #resources .book-heading select{width:100%;max-width:none}body[data-layout] #resources .learning-row .book-bottom{align-items:flex-start;flex-direction:column;gap:6px}}
+body.dark-mode[data-layout="02"] .btn,body.dark-mode[data-layout="02"] .links .contact-link{color:#10150b}
