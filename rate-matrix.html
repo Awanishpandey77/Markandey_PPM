@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#241306">
 <meta name="description" content="Browse the Markandey Pandey Pustak Mandir Books Library: class-wise titles and catalogue rates from the supplied publisher catalogues.">
 <title>Books Library | Markandey Pandey Pustak Mandir</title>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embedded')</script>
 <link rel="stylesheet" href="assets/rate-matrix.css?v=selection-summary-1"><link rel="stylesheet" href="assets/cohesion.css?v=20261104">
 </head>
 <body>
@@ -64,5 +65,6 @@
 <footer><span>Markandey Pandey Pustak Mandir · Gorakhpur</span><a href="store.html">Back to the store ↗</a></footer>
 <script src="assets/catalog-data.js?v=kit-detail-1"></script>
 <script src="assets/rate-matrix.js?v=contract-print-1"></script>
+<script>if(document.documentElement.classList.contains('embedded')){const sendHeight=()=>parent.postMessage({type:'books-library-height',height:document.documentElement.scrollHeight},location.origin);new ResizeObserver(sendHeight).observe(document.documentElement);addEventListener('load',sendHeight);setTimeout(sendHeight,250)}</script>
 </body>
 </html>
