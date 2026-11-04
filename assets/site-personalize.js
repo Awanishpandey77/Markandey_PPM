@@ -271,9 +271,9 @@
       level: ["EARLY YEARS", "PRIMARY", "MIDDLE", "SECONDARY", "SENIOR"],
       highlights: "Projects & milestones", highlightsCopy: "Student work and activities from this sample school.",
       campus: "School & community", welcomeBy: "A welcome from the school",
-      location: "SAMPLE SCHOOL LOCATION", locationTitle: "Find us in Khajani.",
-      locationCopy: "Sample location · verified street address to be added",
-      directions: "Explore the sample location ↗", contact: "Make this direction your own.",
+      location: "Your school, clearly located.", locationTitle: "Your school, clearly located.",
+      locationCopy: "Add your school-approved address and map pin here before launch.",
+      directions: "School location placeholder", contact: "Make this direction your own.",
       contactCopy: "This is a visual concept by Markandey Pandey Pustak Mandir. Share your school’s approved details to discuss a tailored version.",
       whatsapp: "Discuss a school website ↗", admission: "School website sample · by Markandey Pandey Pustak Mandir",
       admissionCopy: "Fictional school profile · replace with your approved information before launch.",
@@ -290,9 +290,9 @@
       level: ["प्रारंभिक", "प्राथमिक", "मध्य", "माध्यमिक", "वरिष्ठ"],
       highlights: "परियोजनाएँ और उपलब्धियाँ", highlightsCopy: "इस नमूना विद्यालय के विद्यार्थियों के काम और गतिविधियाँ।",
       campus: "विद्यालय और समुदाय", welcomeBy: "विद्यालय की ओर से",
-      location: "विद्यालय का नमूना स्थान", locationTitle: "खजनी में आपका स्वागत है।",
-      locationCopy: "नमूना स्थान · सही पता जोड़ा जाएगा",
-      directions: "नमूना स्थान देखें ↗", contact: "इस डिज़ाइन को अपने स्कूल के लिए अपनाएँ।",
+      location: "अपने स्कूल का सही स्थान दिखाएँ।", locationTitle: "अपने स्कूल का सही स्थान दिखाएँ।",
+      locationCopy: "लॉन्च से पहले स्कूल का स्वीकृत पता और मानचित्र स्थान जोड़ें।",
+      directions: "स्कूल के स्थान का नमूना", contact: "इस डिज़ाइन को अपने स्कूल के लिए अपनाएँ।",
       contactCopy: "यह मार्कण्डेय पाण्डेय पुस्तक मंदिर का डिज़ाइन नमूना है। स्कूल की स्वीकृत जानकारी देकर अपने संस्करण पर चर्चा करें।",
       whatsapp: "स्कूल वेबसाइट पर चर्चा करें ↗", admission: "स्कूल वेबसाइट नमूना · मार्कण्डेय पाण्डेय पुस्तक मंदिर",
       admissionCopy: "विद्यालय प्रोफ़ाइल काल्पनिक है · लॉन्च से पहले स्वीकृत जानकारी जोड़ें।",
@@ -457,11 +457,13 @@
     setText("#campus .welcome p:not(.kicker)", hi ? profile.welcomeHi : originalWelcomeText);
     setText("#campus .welcome .kicker", hi ? "विद्यालय की ओर से" : "A welcome from the school");
     setText("#campus .welcome b", hi ? "विद्यालय का स्वागत संदेश · नमूना" : "A school welcome · sample message");
-    setText("#campus .maps-copy .kicker", hi ? localityHi[id] + " · विद्यालय स्थान" : localityEn[id].toUpperCase() + " · SCHOOL LOCATION");
-    setText("#campus .maps-copy h2", hi ? localityHi[id] + " में आपका स्वागत है।" : "Find us in " + localityEn[id] + ".");
+    setText("#campus .maps-copy .kicker", hi ? "स्थान अनुभाग · नमूना" : "LOCATION SECTION · SAMPLE");
+    setText("#campus .maps-copy h2", lang.locationTitle);
     setText("#campus .welcome .welcome-photo span", hi ? "प्रतिनिधि चित्र · नमूना" : "Representative portrait · sample");
     var location = document.querySelector("#campus .maps-copy p");
-    if (location) location.innerHTML = "<b>" + (hi ? profile.nameHi : profile.name) + "</b><br>" + (hi ? locationNameHi : locationName) + "<br>" + lang.locationCopy;
+    if (location) location.textContent = lang.locationCopy;
+    var mapPlaceholder = document.querySelector("#campus .map-placeholder");
+    if (mapPlaceholder) mapPlaceholder.innerHTML = '<span class="map-pin">⌖</span><b>' + (hi ? "आपके स्कूल का सत्यापित स्थान" : "Your verified school location") + "</b><small>" + lang.locationCopy + "</small>";
     setText("#campus .maps-copy .btn", lang.directions);
     setText(".contact-band h2", lang.contact);
     setText(".contact-band p", lang.contactCopy);
