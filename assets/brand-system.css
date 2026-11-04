@@ -1,0 +1,12 @@
+:root{--ink:#18332b;--paper:#f5f4ec;--surface:#fffefa;--line:#dce3d8;--brand:#28634d;--accent:#d69a3d;--muted:#61736a;--soft:#e7efe4;--brown:#173b30;--rust:#28634d;--gold:#d6a34d;--cream:#f5f4ec;--white:#fffefa;color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:88px}body{color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.6}h1,h2,h3,h4{letter-spacing:-.035em}button,input,select{font:inherit}
+.topline,.top{background:#173b30!important;color:#e5eee7!important}.topline a,.top a{color:#f0c979!important}
+.nav,.nav .wrap{background:#fffefaed!important}.nav{backdrop-filter:blur(14px);border-bottom:1px solid var(--line)!important}.brand small{color:var(--muted)!important}
+.btn,.button{background:#28634d!important;color:#fff!important;border-radius:999px!important;border:0!important;transition:transform .18s,background .18s}.btn:hover,.button:hover{background:#194b3a!important;transform:translateY(-1px)}.btn.gold,.button.gold{background:#d6a34d!important;color:#18332b!important}
+.service,.card,.item,.matrix-panel,.total-card,.source-card{border-color:var(--line)!important;border-radius:18px!important;box-shadow:0 14px 38px #17392a0c!important}.service{background:var(--surface)!important}.service:hover,.card:hover,.item:hover{border-color:#a9c4ae!important}
+.ticker{background:#e7efe4!important;color:var(--ink)!important;border-color:var(--line)!important}.ticker b{color:var(--brand)!important}
+.samples,.section.alt{background:#e9eee4!important}.contact,.footer{background:#173b30!important}.float-wa{background:#28634d!important}
+.hero{background:radial-gradient(ellipse at 85% 15%,#a7c6a544,transparent 34%),linear-gradient(120deg,#173b30,#28634d 72%,#397457)!important}
+.intro h1 em{color:var(--brand)!important}.toolbar{background:#e7efe4!important}.topbar{background:#173b30!important}.class-tabs button.active{background:#28634d!important;border-color:#28634d!important}
+@media(max-width:800px){.links{gap:10px}.links a{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
