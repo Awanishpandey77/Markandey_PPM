@@ -46,6 +46,7 @@
     }).sort(function(a,b){return pubs.indexOf(a.publisher)-pubs.indexOf(b.publisher)||a.subject.localeCompare(b.subject)||a.series.localeCompare(b.series)});
   }
   function render(){
+    var schoolName=document.getElementById("schoolName").value.trim();
     var list=filteredRows();
     document.getElementById("classEyebrow").textContent=className.toUpperCase()+" RATE MATRIX";
     document.getElementById("matrixTitle").textContent="All subjects and series";
@@ -65,7 +66,6 @@
     document.getElementById("contractSchool").textContent=schoolName||"To be entered";
     document.getElementById("contractGrandTotal").textContent=money(chosenTotal);
     document.getElementById("contractBookList").innerHTML=chosenByClass.length?chosenByClass.map(function(group){return '<h4>'+group.name+' · Class total '+money(group.total)+'</h4><table><thead><tr><th>Subject</th><th>Book / series</th><th>Rate (₹)</th></tr></thead><tbody>'+group.details.map(function(r){return '<tr><td>'+r.subject+'</td><td>'+r.series+'</td><td class="rate-col">'+money(r.price)+'</td></tr>'}).join("")+'</tbody></table>'}).join(""):'<p>No books selected. Select class items before printing the agreement.</p>';
-    var schoolName=document.getElementById("schoolName").value.trim();
     var message=["Complete class-wise catalogue list — Markandey Pandey Pustak Mandir","School: "+(schoolName||"Not provided")];
     chosenByClass.forEach(function(group){message.push("",group.name+" — "+group.bookCount+" books · class total ₹"+group.total.toLocaleString("en-IN"));group.details.forEach(function(r){message.push("• "+r.subject+" — "+r.series+": ₹"+Number(r.price).toLocaleString("en-IN"))})});
     if(!allCount)message.push("No books selected yet. Select books from each class tab to build the complete list.");
@@ -74,8 +74,8 @@
     var targetNumber=rawNumber.length===10?"91"+rawNumber:rawNumber;
     var validNumber=targetNumber.length>=11&&targetNumber.length<=15;
     var hint=document.getElementById("whatsappHint");
-    hint.textContent=!schoolName?"Enter the school name to prepare the message.":!validNumber?"Enter a valid WhatsApp number, including country code if outside India.":"Ready to open WhatsApp with the school name and selected class lists.";
-    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Open message in WhatsApp ↗";wa.href=schoolName&&validNumber?"https://wa.me/"+targetNumber+"?text="+encodeURIComponent(message.join("\n")):"#";wa.setAttribute("aria-disabled",String(!(schoolName&&validNumber)));
+    hint.textContent=!schoolName?"Enter the school name to prepare the message.":!validNumber?"Enter a valid WhatsApp number, including country code if outside India.":!allCount?"Select at least one priced book before sending.":"Ready to open WhatsApp with the school name and selected class lists.";
+    var wa=document.getElementById("matrixWhatsApp");wa.textContent="Open message in WhatsApp ↗";wa.href=schoolName&&validNumber&&allCount?"https://wa.me/"+targetNumber+"?text="+encodeURIComponent(message.join("\n")):"#";wa.setAttribute("aria-disabled",String(!(schoolName&&validNumber&&allCount)));
   }
   classTabs.addEventListener("click",function(e){
     var b=e.target.closest("[data-class]");if(!b)return;className=b.dataset.class;

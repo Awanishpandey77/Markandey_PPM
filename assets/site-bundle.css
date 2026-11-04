@@ -224,3 +224,29 @@ body[data-layout="05"] #uniforms{background:#ecdfc7}body[data-layout="05"] #unif
 body[data-layout="06"] #uniforms{background:#dfe9d7}body[data-layout="06"] #uniforms .uniform-grid{grid-template-columns:1fr}body[data-layout="06"] #uniforms .uniform-card{display:grid;grid-template-columns:1.1fr .9fr;border:0;border-left:5px solid var(--brand);border-radius:30px 4px 30px 4px;background:#fafff5;box-shadow:0 8px 24px #23482b12}body[data-layout="06"] #uniforms .uniform-card>img{height:100%;aspect-ratio:auto}body[data-layout="06"] #uniforms .uniform-card:nth-child(even){grid-template-columns:.9fr 1.1fr}body[data-layout="06"] #uniforms .uniform-card:nth-child(even)>img{order:2}body[data-layout="06"] #uniforms .uniform-contact{border-radius:12px}
 @media(max-width:760px){#uniforms{padding:42px 0}#uniforms .uniform-grid{grid-template-columns:1fr!important;gap:13px}#uniforms .uniform-card,#uniforms .uniform-card:nth-child(even){display:grid;grid-template-columns:1fr!important;transform:none!important}#uniforms .uniform-card>img{height:auto!important;aspect-ratio:1.3!important;padding:0!important}#uniforms .uniform-card:nth-child(even)>img{order:0}#uniforms .uniform-copy{padding:16px}#uniforms .uniform-copy h3{font-size:20px}#uniforms .uniform-enquiry{align-items:flex-start;flex-direction:column;padding:17px}#uniforms .uniform-contacts{justify-content:flex-start;width:100%}#uniforms .uniform-contact{flex-wrap:wrap;white-space:normal}}
 @media(max-width:410px){#uniforms .uniform-contacts{display:grid;grid-template-columns:1fr;width:100%}#uniforms .uniform-contact{justify-content:space-between}}
+
+/* MOBILE READABILITY OVERRIDES · 2026-11-04 */
+@media (max-width: 680px){
+  html,body{width:100%;max-width:100%;overflow-x:clip}
+  .wrap,.header,.header .nav,.resource-top,.catalog,.year-panel,.book-panel,.book-grid,.book-card,.book-copy{min-width:0;max-width:100%}
+  .header .nav{gap:9px;padding-inline:0}
+  .brand{min-width:0;max-width:calc(100% - 48px);gap:8px}
+  .brand b,.brand small{overflow-wrap:anywhere}
+  .links{max-width:100vw}
+  #resources .catalog{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  #resources .year-panel{position:static!important;width:100%;padding:12px!important}
+  #resources .year-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+  #resources .year-list button{min-width:0;white-space:normal;overflow-wrap:anywhere}
+  #resources .book-panel{width:100%;padding:14px!important}
+  #resources .book-heading{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:10px}
+  #resources .book-heading select{width:100%;max-width:none!important}
+  #resources .book-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  #resources .book-card{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%;transform:none!important}
+  #resources .book-card .cover{width:100%;height:145px!important}
+  #resources .book-card .book-copy{min-width:0;padding:13px!important;overflow-wrap:anywhere}
+  #resources .book-bottom{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  #resources .resource-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
+  #resources .resource-actions>*{width:100%;min-width:0}
+  img,iframe{max-width:100%}
+}
+@media(max-width:380px){#resources .year-list{grid-template-columns:minmax(0,1fr)!important}}
