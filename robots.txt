@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://awanishpandey77.github.io/Markandey_PPM/sitemap.xml
