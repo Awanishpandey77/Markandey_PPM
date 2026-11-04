@@ -6,6 +6,8 @@ The school concepts use intentionally different layouts: editorial, dark STEM da
 
 ## Keep the folder structure
 
-For GitHub Pages, put `index.html`, the ten `school-*.html` pages, and `assets/` at the repository root. `assets/site.css`, `assets/layouts.css` and `assets/site.js` are shared by the pages. Keep the original `demo.html` alongside them if you want the original Cursor site linked in the gallery.
+The school website samples are presented separately at `website-samples.html`; each of the ten concepts links back to the main MPPM site and carries Markandey Pandey Pustak Mandir attribution.
+
+For GitHub Pages, put `index.html`, `website-samples.html`, the ten `school-*.html` pages, and `assets/` at the repository root. `assets/site.css`, `assets/layouts.css` and `assets/site.js` are shared by the pages. Keep the original `demo.html` alongside them if you want the original Cursor site linked in the gallery.
 
 The supplied publisher catalogues (Magic Mind, Galaxy Publication and Coral Publication) are included under assets/catalogs for reference. The shop’s book-set enquiry builder presents illustrative subject lists and requests current rates, editions and availability directly; confirm all details before ordering. School names, locations, notices, statistics, principal portraits and school photographs remain illustrative samples.

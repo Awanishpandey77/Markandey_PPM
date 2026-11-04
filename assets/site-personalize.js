@@ -273,11 +273,11 @@
       campus: "School & community", welcomeBy: "A welcome from the school",
       location: "SAMPLE SCHOOL LOCATION", locationTitle: "Find us in Khajani.",
       locationCopy: "Sample location · verified street address to be added",
-      directions: "Explore the sample location ↗", contact: "Talk with our school team.",
-      contactCopy: "Sample enquiry link · confirm contact details before publishing.",
-      whatsapp: "Start an enquiry ↗", admission: "Admissions enquiry open · sample concept",
-      admissionCopy: "Ask about learning, class lists or a visit.",
-      footer: "Fictional details and photos"
+      directions: "Explore the sample location ↗", contact: "Make this direction your own.",
+      contactCopy: "This is a visual concept by Markandey Pandey Pustak Mandir. Share your school’s approved details to discuss a tailored version.",
+      whatsapp: "Discuss a school website ↗", admission: "School website sample · by Markandey Pandey Pustak Mandir",
+      admissionCopy: "Fictional school profile · replace with your approved information before launch.",
+      footer: "Fictional sample content · MPPM concept"
     },
     hi: {
       nav: ["कक्षाएँ और किताबें", "विद्यार्थी जीवन", "परियोजनाएँ", "सूचनाएँ", "स्थान"],
@@ -292,11 +292,11 @@
       campus: "विद्यालय और समुदाय", welcomeBy: "विद्यालय की ओर से",
       location: "विद्यालय का नमूना स्थान", locationTitle: "खजनी में आपका स्वागत है।",
       locationCopy: "नमूना स्थान · सही पता जोड़ा जाएगा",
-      directions: "नमूना स्थान देखें ↗", contact: "हमारी स्कूल टीम से बात करें।",
-      contactCopy: "नमूना संपर्क लिंक · प्रकाशित करने से पहले सही विवरण जोड़ें।",
-      whatsapp: "पूछताछ शुरू करें ↗", admission: "प्रवेश पूछताछ खुली है · नमूना",
-      admissionCopy: "पढ़ाई, कक्षा सूची या विद्यालय भ्रमण के बारे में पूछें।",
-      footer: "काल्पनिक जानकारी व तस्वीरें"
+      directions: "नमूना स्थान देखें ↗", contact: "इस डिज़ाइन को अपने स्कूल के लिए अपनाएँ।",
+      contactCopy: "यह मार्कण्डेय पाण्डेय पुस्तक मंदिर का डिज़ाइन नमूना है। स्कूल की स्वीकृत जानकारी देकर अपने संस्करण पर चर्चा करें।",
+      whatsapp: "स्कूल वेबसाइट पर चर्चा करें ↗", admission: "स्कूल वेबसाइट नमूना · मार्कण्डेय पाण्डेय पुस्तक मंदिर",
+      admissionCopy: "विद्यालय प्रोफ़ाइल काल्पनिक है · लॉन्च से पहले स्वीकृत जानकारी जोड़ें।",
+      footer: "काल्पनिक नमूना सामग्री · MPPM डिज़ाइन"
     }
   };
 
@@ -370,12 +370,12 @@
     var hi = currentLanguage === "hi";
     var lang = t[currentLanguage];
     document.documentElement.lang = currentLanguage;
-    document.title = (hi ? profile.nameHi : profile.name) + " · " + (hi ? "नमूना विद्यालय" : "school concept");
+    document.title = (hi ? profile.nameHi : profile.name) + " · " + (hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर का वेबसाइट नमूना" : "School Website Sample by Markandey Pandey Pustak Mandir");
     var description = document.querySelector('meta[name="description"]');
-    if (description) description.content = hi ? profile.nameHi + " · खजनी, गोरखपुर · कक्षा सामग्री और विद्यार्थी जीवन का नमूना" : profile.name + " · Khajani, Gorakhpur · sample classes, materials and student life";
+    if (description) description.content = hi ? profile.nameHi + " · मार्कण्डेय पाण्डेय पुस्तक मंदिर द्वारा स्कूल वेबसाइट डिज़ाइन नमूना" : profile.name + " · fictional school website concept by Markandey Pandey Pustak Mandir";
     setText(".brand b", hi ? profile.nameHi : profile.name);
-    setText(".brand small", (hi ? locationNameHi : locationName) + (hi ? " · विद्यालय नमूना" : " · SCHOOL WEBSITE CONCEPT"));
-    setText(".hero .kicker", hi ? localityHi[id] + " · गोरखपुर · " + profile.taglineHi : profile.tagline + " · " + localityEn[id].toUpperCase() + ", GORAKHPUR");
+    setText(".brand small", hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर · डिज़ाइन नमूना" : "SCHOOL WEBSITE CONCEPT · BY MARKANDEY PANDEY PUSTAK MANDIR");
+    setText(".hero .kicker", hi ? "काल्पनिक वेबसाइट नमूना · " + profile.taglineHi : "FICTIONAL WEBSITE CONCEPT · " + profile.tagline);
     setText(".hero h1", hi ? profile.mottoHi : profile.motto);
     setText(".hero h1 + p", hi ? profile.leadHi : profile.lead);
     setText(".crest", profile.name.split(/\s+/).map(function (part) { return part.charAt(0); }).join("").slice(0, 3));
@@ -384,7 +384,7 @@
     if (ribbon) {
       setText(".admission-ribbon strong", lang.admission);
       setText(".admission-ribbon span", lang.admissionCopy);
-      setText(".admission-ribbon a", hi ? "पूछें ↗" : "Enquire ↗");
+      setText(".admission-ribbon a", hi ? "डिज़ाइन पर चर्चा करें ↗" : "Discuss this design ↗");
     }
     setText(".resource-top .kicker", hi ? "नर्सरी → कक्षा 12 · " + profile.resourceHi : "Nursery → Class 12 · " + profile.resource);
     setText(".resource-top h2", hi ? profile.resourceHi : profile.resource);
@@ -466,10 +466,10 @@
     setText(".contact-band h2", lang.contact);
     setText(".contact-band p", lang.contactCopy);
     setText(".wa-button", lang.whatsapp);
-    setText(".footer-inner b", hi ? profile.nameHi : profile.name);
+    setText(".footer-inner b", "Markandey Pandey Pustak Mandir");
     var footer = document.querySelectorAll(".footer-inner span");
-    if (footer[0]) footer[0].textContent = (hi ? "विद्यालय नमूना " + id : "School concept " + id) + " · " + lang.footer;
-    if (footer[1]) footer[1].textContent = hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर की प्रस्तुति" : "Design showcase by Markandey Pandey Pustak Mandir";
+    if (footer[0]) footer[0].textContent = (hi ? "वेबसाइट नमूना " + id : "Website concept " + id) + " · " + lang.footer;
+    if (footer[1]) footer[1].textContent = "© " + new Date().getFullYear() + " Markandey Pandey Pustak Mandir. All rights reserved.";
     translateCards();
   }
 
@@ -483,7 +483,7 @@
   if (directions) directions.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(profile.name + " " + locationName);
   document.querySelectorAll("a[href*='wa.me']").forEach(function (link) {
     var phone = link.dataset.contactPhone || "9500694579";
-    var message = "Hello, I have an enquiry about " + profile.name + " in " + localityEn[id] + ", Gorakhpur.";
+    var message = "Hello, I would like to discuss school website concept " + id + " (" + profile.name + ") with Markandey Pandey Pustak Mandir.";
     link.href = "https://wa.me/91" + phone + "?text=" + encodeURIComponent(message);
   });
   document.querySelectorAll("img").forEach(function (img) {

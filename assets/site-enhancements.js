@@ -1,5 +1,9 @@
 (function(){
   var id=document.body.dataset.site||"01", body=document.body;
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window){
+    var revealTargets=document.querySelectorAll(".section-title,.stats-strip article,.home-card,.achievement-list article,.gallery-photo,.notice,.maps-card,.book-panel");
+    if(revealTargets.length){body.classList.add("motion-enabled");var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target)}})},{threshold:.12});revealTargets.forEach(function(element){element.classList.add("motion-reveal");revealObserver.observe(element)})}
+  }
   try {
     var saved=localStorage.getItem("mppm-demo-theme");
     if(saved==="dark")body.classList.add("dark-mode");
@@ -22,17 +26,17 @@
   var strings={
     en:{
       "nav0":"Classes & books","nav1":"School life","nav2":"Photos","nav3":"Notices","nav4":"Location",
-      "admission":"✦ Admissions enquiry open for 2026–27","admissionCopy":"Ask about classes, book lists or campus visits.","enquire":"Enquire ↗",
+      "admission":"✦ School website concept by Markandey Pandey Pustak Mandir","admissionCopy":"Fictional sample details · replace with your school’s approved information.","enquire":"Discuss this design ↗",
       "resourceTitle":"Your class. Your materials.","print":"Print / Save as PDF","choose":"CHOOSE YOUR CLASS","search":"Search title or subject…",
       "activities":"Learning has many doors.","achievements":"Good work, worth sharing.","gallery":"Photos from school life.",
-      "notices":"Dates to keep in mind.","location":"Find your way here.","contact":"Ask us on WhatsApp.","whatsapp":"☏  Start an enquiry ↗"
+      "notices":"Dates to keep in mind.","location":"Your school, clearly located.","contact":"Make this direction your own.","whatsapp":"☏  Discuss a school website ↗"
     },
     hi:{
       "nav0":"कक्षाएँ और किताबें","nav1":"स्कूल जीवन","nav2":"तस्वीरें","nav3":"सूचनाएँ","nav4":"स्थान",
-      "admission":"✦ 2026–27 के लिए प्रवेश पूछताछ खुली है","admissionCopy":"कक्षाओं, किताबों की सूची या स्कूल भ्रमण के बारे में पूछें।","enquire":"पूछें ↗",
+      "admission":"✦ मार्कण्डेय पाण्डेय पुस्तक मंदिर का वेबसाइट नमूना","admissionCopy":"काल्पनिक नमूना विवरण · स्कूल की स्वीकृत जानकारी से बदलें।","enquire":"डिज़ाइन पर चर्चा करें ↗",
       "resourceTitle":"आपकी कक्षा। आपकी अध्ययन सामग्री।","print":"प्रिंट / PDF में सेव करें","choose":"अपनी कक्षा चुनें","search":"किताब या विषय खोजें…",
       "activities":"सीखने के कई रास्ते हैं।","achievements":"अच्छे काम साझा करें।","gallery":"स्कूल जीवन की तस्वीरें।",
-      "notices":"आने वाली महत्वपूर्ण तिथियाँ।","location":"यहाँ पहुँचें।","contact":"WhatsApp पर पूछें।","whatsapp":"☏  पूछताछ शुरू करें ↗"
+      "notices":"आने वाली महत्वपूर्ण तिथियाँ।","location":"स्कूल का स्थान यहाँ दिखाएँ।","contact":"इस डिज़ाइन को अपने स्कूल के लिए अपनाएँ।","whatsapp":"☏  स्कूल वेबसाइट पर चर्चा करें ↗"
     }
   };
   var languageButton=document.getElementById("language");

@@ -40,3 +40,19 @@ body[data-layout].dark-mode{--ink:#edf4ef;--muted:#b1c1b7;--paper:#14211b;--surf
 body[data-layout].dark-mode .header{background:#18281fed!important}body[data-layout].dark-mode .links a{color:var(--ink)!important}
 @media(max-width:760px){body[data-layout] .header .nav{min-height:66px}body[data-layout] .links{background:var(--surface)!important;border:1px solid var(--line);box-shadow:var(--shadow)}body[data-layout] .hero{border-radius:0 0 24px 24px}body[data-layout] .welcome,body[data-layout] .maps-card{padding:18px!important}}
 @media(prefers-reduced-motion:reduce){body[data-layout] *,body[data-layout] *::before,body[data-layout] *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Ten concept pages: subtle, concept-specific textures and restrained motion. */
+body[data-layout="01"] .resources{background-image:radial-gradient(ellipse at 90% 0%,#c89b5c1a,transparent 36%),linear-gradient(90deg,transparent 49.7%,#6e58420b 50%,transparent 50.3%)}
+body[data-layout="02"] .resources{background-image:linear-gradient(#72b8cd0a 1px,transparent 1px),linear-gradient(90deg,#72b8cd0a 1px,transparent 1px);background-size:28px 28px}
+body[data-layout="03"] .resources{background-image:radial-gradient(circle at 12% 20%,#78ac6d20 0 55px,transparent 57px),radial-gradient(circle at 91% 78%,#e69a7720 0 85px,transparent 87px)}
+body[data-layout="04"] .resources{background-image:linear-gradient(130deg,#ffffff68 0 24%,transparent 24% 54%,#ffffff30 54% 75%,transparent 75%)}
+body[data-layout="05"] .resources{background-image:repeating-linear-gradient(0deg,transparent 0 39px,#8d71420c 40px),linear-gradient(90deg,#d0aa6320,transparent 25%)}
+body[data-layout="06"] .resources{background-image:radial-gradient(ellipse at 6% 4%,#7f9e6724,transparent 32%),radial-gradient(ellipse at 100% 90%,#d6a15020,transparent 35%)}
+body[data-layout="07"] .resources{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#11111108 19px 20px)}
+body[data-layout="08"] .resources{background-image:radial-gradient(circle,#8067c418 1.5px,transparent 2px);background-size:22px 22px}
+body[data-layout="09"] .resources{background-image:linear-gradient(#385b7808 1px,transparent 1px);background-size:100% 34px}
+body[data-layout="10"] .resources{background-image:linear-gradient(90deg,#e7b83320 0 14%,transparent 14% 100%),linear-gradient(170deg,transparent 0 68%,#bb3f5412 68% 82%,transparent 82%)}
+body[data-layout] .footer-inner{gap:12px 22px}body[data-layout] .footer-inner a{color:#f0c979;font-size:10px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+body[data-layout] .map-placeholder{display:flex;min-height:230px;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:24px;text-align:center;background:radial-gradient(circle at center,#ffffffb5,transparent 66%),repeating-linear-gradient(45deg,#dbe5dc 0 18px,#e7eee5 18px 36px);color:var(--ink)}body[data-layout] .map-placeholder .map-pin{font-size:38px;color:var(--brand)}body[data-layout] .map-placeholder b{font-size:15px}body[data-layout] .map-placeholder small{color:var(--muted);font-size:11px}
+body[data-layout] .motion-reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}body[data-layout] .motion-reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:680px){body[data-layout] .footer-inner a{font-size:9px}body[data-layout] .map-placeholder{min-height:190px}}
