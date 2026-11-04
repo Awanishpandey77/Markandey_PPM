@@ -274,8 +274,8 @@
       location: "Your school, clearly located.", locationTitle: "Your school, clearly located.",
       locationCopy: "Add your school-approved address and map pin here before launch.",
       directions: "School location placeholder", contact: "Make this direction your own.",
-      contactCopy: "This is a visual concept by Markandey Pandey Pustak Mandir. Share your school’s approved details to discuss a tailored version.",
-      whatsapp: "Discuss a school website ↗", admission: "School website sample · by Markandey Pandey Pustak Mandir",
+      contactCopy: "This is a visual school website concept by MPPM. Share your school’s approved details to discuss a tailored version.",
+      whatsapp: "Discuss a school website ↗", admission: "School website sample · by MPPM",
       admissionCopy: "Fictional school profile · replace with your approved information before launch.",
       footer: "Fictional sample content · MPPM concept"
     },
@@ -370,11 +370,11 @@
     var hi = currentLanguage === "hi";
     var lang = t[currentLanguage];
     document.documentElement.lang = currentLanguage;
-    document.title = (hi ? profile.nameHi : profile.name) + " · " + (hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर का वेबसाइट नमूना" : "School Website Sample by Markandey Pandey Pustak Mandir");
+    document.title = (hi ? profile.nameHi : profile.name) + " · " + (hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर का वेबसाइट नमूना" : "School Website Sample by MPPM");
     var description = document.querySelector('meta[name="description"]');
-    if (description) description.content = hi ? profile.nameHi + " · मार्कण्डेय पाण्डेय पुस्तक मंदिर द्वारा स्कूल वेबसाइट डिज़ाइन नमूना" : profile.name + " · fictional school website concept by Markandey Pandey Pustak Mandir";
+    if (description) description.content = hi ? profile.nameHi + " · मार्कण्डेय पाण्डेय पुस्तक मंदिर द्वारा स्कूल वेबसाइट डिज़ाइन नमूना" : profile.name + " · fictional school website concept by MPPM";
     setText(".brand b", hi ? profile.nameHi : profile.name);
-    setText(".brand small", hi ? "मार्कण्डेय पाण्डेय पुस्तक मंदिर · डिज़ाइन नमूना" : "SCHOOL WEBSITE CONCEPT · BY MARKANDEY PANDEY PUSTAK MANDIR");
+    setText(".brand small", hi ? "विद्यालय वेबसाइट नमूना · MPPM" : "SCHOOL WEBSITE CONCEPT · BY MPPM");
     setText(".hero .kicker", hi ? "काल्पनिक वेबसाइट नमूना · " + profile.taglineHi : "FICTIONAL WEBSITE CONCEPT · " + profile.tagline);
     setText(".hero h1", hi ? profile.mottoHi : profile.motto);
     setText(".hero h1 + p", hi ? profile.leadHi : profile.lead);
@@ -468,10 +468,11 @@
     setText(".contact-band h2", lang.contact);
     setText(".contact-band p", lang.contactCopy);
     setText(".wa-button", lang.whatsapp);
-    setText(".footer-inner b", "Markandey Pandey Pustak Mandir");
-    var footer = document.querySelectorAll(".footer-inner span");
+    var footerBrand = document.querySelector(".footer-inner b");
+    if (footerBrand) footerBrand.innerHTML = "<span>Markandey</span><span>Pandey Pustak Mandir</span>";
+    var footer = document.querySelectorAll(".footer-inner > span");
     if (footer[0]) footer[0].textContent = (hi ? "वेबसाइट नमूना " + id : "Website concept " + id) + " · " + lang.footer;
-    if (footer[1]) footer[1].textContent = "© " + new Date().getFullYear() + " Markandey Pandey Pustak Mandir. All rights reserved.";
+    if (footer[1]) footer[1].textContent = "© " + new Date().getFullYear() + " MPPM. All rights reserved.";
     translateCards();
   }
 
@@ -485,7 +486,7 @@
   if (directions) directions.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(profile.name + " " + locationName);
   document.querySelectorAll("a[href*='wa.me']").forEach(function (link) {
     var phone = link.dataset.contactPhone || "9500694579";
-    var message = "Hello, I would like to discuss school website concept " + id + " (" + profile.name + ") with Markandey Pandey Pustak Mandir.";
+    var message = "Hello, I would like to discuss school website concept " + id + " (" + profile.name + ") with MPPM.";
     link.href = "https://wa.me/91" + phone + "?text=" + encodeURIComponent(message);
   });
   document.querySelectorAll("img").forEach(function (img) {

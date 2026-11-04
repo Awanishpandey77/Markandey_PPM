@@ -26,7 +26,7 @@
   var strings={
     en:{
       "nav0":"Classes & books","nav1":"School life","nav2":"Photos","nav3":"Notices","nav4":"Location",
-      "admission":"✦ School website concept by Markandey Pandey Pustak Mandir","admissionCopy":"Fictional sample details · replace with your school’s approved information.","enquire":"Discuss this design ↗",
+      "admission":"✦ School website concept by MPPM","admissionCopy":"Fictional sample details · replace with your school’s approved information.","enquire":"Discuss this design ↗",
       "resourceTitle":"Your class. Your materials.","print":"Print / Save as PDF","choose":"CHOOSE YOUR CLASS","search":"Search title or subject…",
       "activities":"Learning has many doors.","achievements":"Good work, worth sharing.","gallery":"Photos from school life.",
       "notices":"Dates to keep in mind.","location":"Your school, clearly located.","contact":"Make this direction your own.","whatsapp":"☏  Discuss a school website ↗"
