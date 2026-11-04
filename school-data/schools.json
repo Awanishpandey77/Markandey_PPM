@@ -1,0 +1,1169 @@
+{
+  "version": 1,
+  "schools": [
+    {
+      "slug": "khajani-reading-school",
+      "active": true,
+      "name": "Khajani Reading School",
+      "nameHi": "खजनी रीडिंग स्कूल",
+      "locality": "Khajani, Gorakhpur",
+      "localityHi": "खजनी, गोरखपुर",
+      "logo": "KRS",
+      "motto": "Rise with curiosity. Leave with character.",
+      "mottoHi": "जिज्ञासा के साथ बढ़ें, अच्छे चरित्र के साथ आगे बढ़ें।",
+      "intro": "A welcoming school where strong foundations meet stories, creative work and room to ask questions.",
+      "introHi": "एक आत्मीय विद्यालय जहाँ मज़बूत बुनियाद, कहानियाँ, रचनात्मक काम और सवाल पूछने की खुली जगह मिलती है।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#496b55",
+      "soft": "#e8eee5",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-01-day.svg",
+        "sportsImage": "assets/uniform-01-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    },
+    {
+      "slug": "rapti-stem-academy",
+      "active": true,
+      "name": "Rapti STEM Academy",
+      "nameHi": "राप्ती STEM अकादमी",
+      "locality": "Rapti Nagar, Gorakhpur",
+      "localityHi": "राप्ती नगर, गोरखपुर",
+      "logo": "RSA",
+      "motto": "Build the answer. Test the next question.",
+      "mottoHi": "जवाब बनाओ। फिर अगला सवाल परखो।",
+      "intro": "A hands-on school for science, making, coding and useful inventions.",
+      "introHi": "विज्ञान, निर्माण, कोडिंग और उपयोगी आविष्कारों के लिए प्रयोगशील विद्यालय।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#18251e",
+      "soft": "#dff0e7",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-02-day.svg",
+        "sportsImage": "assets/uniform-02-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    },
+    {
+      "slug": "kusumhi-grove-learning-school",
+      "active": true,
+      "name": "Kusumhi Grove Learning School",
+      "nameHi": "कुसम्ही ग्रोव लर्निंग स्कूल",
+      "locality": "Kusumhi, Gorakhpur",
+      "localityHi": "कुसम्ही, गोरखपुर",
+      "logo": "KGS",
+      "motto": "Find your spark. Follow it together.",
+      "mottoHi": "अपनी चमक खोजो, साथ मिलकर आगे बढ़ो।",
+      "intro": "A joyful place for stories, play and small brave discoveries.",
+      "introHi": "कहानियों, खेल और नन्ही बहादुर खोजों के लिए आनंदमय जगह।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#c85245",
+      "soft": "#f3e9cf",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-03-day.svg",
+        "sportsImage": "assets/uniform-03-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    },
+    {
+      "slug": "ramgarh-taal-international-school",
+      "active": true,
+      "name": "Ramgarh Taal International School",
+      "nameHi": "रामगढ़ ताल इंटरनेशनल स्कूल",
+      "locality": "Ramgarh Taal, Gorakhpur",
+      "localityHi": "रामगढ़ ताल, गोरखपुर",
+      "logo": "RTI",
+      "motto": "Many perspectives. One shared future.",
+      "mottoHi": "कई नज़रिए, हमारा साझा भविष्य।",
+      "intro": "A bright meeting place for languages, design and ideas from near and far.",
+      "introHi": "भाषाओं, डिज़ाइन और पास-दूर के विचारों का उजला मिलन स्थल।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#5277ee",
+      "soft": "#e4eff8",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-04-day.svg",
+        "sportsImage": "assets/uniform-04-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    },
+    {
+      "slug": "gorakhnath-vidya-mandir",
+      "active": true,
+      "name": "Gorakhnath Vidya Mandir",
+      "nameHi": "गोरखनाथ विद्या मंदिर",
+      "locality": "Gorakhnath, Gorakhpur",
+      "localityHi": "गोरखनाथ, गोरखपुर",
+      "logo": "GVM",
+      "motto": "Learn with purpose. Live with care.",
+      "mottoHi": "उद्देश्य से सीखें, संवेदना से जिएँ।",
+      "intro": "A thoughtful school rooted in local stories, strong study and shared care.",
+      "introHi": "स्थानीय कहानियों, गंभीर अध्ययन और आपसी संवेदना से जुड़ा विद्यालय।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#8a493b",
+      "soft": "#eee4d0",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-05-day.svg",
+        "sportsImage": "assets/uniform-05-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    },
+    {
+      "slug": "khajani-greenfield-nature-school",
+      "active": true,
+      "name": "Khajani Greenfield Nature School",
+      "nameHi": "खजनी ग्रीनफील्ड नेचर स्कूल",
+      "locality": "Khajani, Gorakhpur",
+      "localityHi": "खजनी, गोरखपुर",
+      "logo": "KGN",
+      "motto": "Grow curious. Grow connected.",
+      "mottoHi": "जिज्ञासा से बढ़ें, प्रकृति से जुड़ें।",
+      "intro": "The natural world is our classroom for observation, care and discovery.",
+      "introHi": "प्रकृति हमारी कक्षा है, जहाँ हम निरीक्षण, देखभाल और खोज सीखते हैं।",
+      "about": "A school day with room to wonder. Students learn through strong classroom foundations, caring relationships and projects connected to the world around them.",
+      "aboutHi": "जिज्ञासा के लिए खुला स्कूल का दिन। विद्यार्थी कक्षा की मज़बूत बुनियाद, आत्मीय संबंधों और अपने आसपास की दुनिया से जुड़े कामों के माध्यम से सीखते हैं।",
+      "heroPhoto": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1500&q=85",
+      "accent": "#46784d",
+      "soft": "#e8eedf",
+      "grades": [
+        "Nursery",
+        "Class 1",
+        "Class 5",
+        "Class 10"
+      ],
+      "books": {
+        "Nursery": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Little Readers",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 1": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 5": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ],
+        "Class 10": [
+          {
+            "subject": "English",
+            "subjectHi": "अंग्रेज़ी",
+            "title": "Reading and Writing",
+            "titleHi": "पठन और लेखन",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹125"
+          },
+          {
+            "subject": "Hindi",
+            "subjectHi": "हिंदी",
+            "title": "Hindi Pathmala",
+            "titleHi": "हिंदी पाठमाला",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹145"
+          },
+          {
+            "subject": "Mathematics",
+            "subjectHi": "गणित",
+            "title": "Everyday Mathematics",
+            "titleHi": "दैनिक गणित",
+            "author": "Sample title",
+            "publisher": "To confirm",
+            "price": "₹165"
+          }
+        ]
+      },
+      "uniform": {
+        "weekday": "Sample weekday uniform: light shirt, school-colour bottoms, belt and black shoes. Confirm the real school colours and items.",
+        "weekdayHi": "नमूना दैनिक वेशभूषा: हल्की शर्ट, विद्यालय रंग की पैंट या स्कर्ट, बेल्ट और काले जूते। असली रंग और वस्तुओं की पुष्टि करें।",
+        "sports": "Sample games kit: house-colour T-shirt, track pants and sports shoes. Confirm assigned house colour.",
+        "sportsHi": "नमूना खेल पोशाक: हाउस रंग की टी-शर्ट, ट्रैक पैंट और खेल के जूते। निर्धारित हाउस रंग की पुष्टि करें।",
+        "weekdayImage": "assets/uniform-06-day.svg",
+        "sportsImage": "assets/uniform-06-sport.svg"
+      },
+      "activities": [
+        {
+          "title": "Learning studio",
+          "titleHi": "सीखने का स्टूडियो",
+          "copy": "Ask, explore and make something together.",
+          "copyHi": "सवाल पूछें, खोजें और मिलकर कुछ बनाएं।"
+        },
+        {
+          "title": "Field and team",
+          "titleHi": "मैदान और टीम",
+          "copy": "Movement, outdoor play and practice with a team.",
+          "copyHi": "गतिविधियों, खुले खेल और टीम के साथ अभ्यास का समय।"
+        },
+        {
+          "title": "Creative room",
+          "titleHi": "रचनात्मक कक्ष",
+          "copy": "Music, art and performance open new ways to share ideas.",
+          "copyHi": "संगीत, कला और प्रस्तुति विचार साझा करने के नए रास्ते खोलते हैं।"
+        }
+      ],
+      "notices": [
+        {
+          "title": "Admissions enquiry open",
+          "titleHi": "प्रवेश पूछताछ जारी",
+          "copy": "Ask about classes, book lists or a school visit.",
+          "copyHi": "कक्षाओं, पुस्तक सूची या विद्यालय भ्रमण के बारे में पूछें।"
+        },
+        {
+          "title": "Book list update",
+          "titleHi": "पुस्तक सूची अपडेट",
+          "copy": "Sample notice. Confirm dates and details with the school.",
+          "copyHi": "नमूना सूचना। तिथियों और विवरण की विद्यालय से पुष्टि करें।"
+        }
+      ],
+      "photos": [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      ],
+      "phones": [
+        "8840209975",
+        "8840316905",
+        "9500694579"
+      ]
+    }
+  ]
+}
