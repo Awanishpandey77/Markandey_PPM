@@ -170,7 +170,7 @@
     var segment = document.createElement("div");
     segment.className = "section-segment " + element.className.replace(/\bsection\b/g, "").trim();
     segment.dataset.segment = label;
-    if (label === "uniforms") segment.id = "uniforms";
+    if (label === "notices") segment.id = "notices";
     var style = element.getAttribute("style");
     if (style) segment.setAttribute("style", style);
     while (element.firstChild) segment.appendChild(element.firstChild);
@@ -199,13 +199,12 @@
   var notices = convertSection(main.querySelector("#notices"), "notices");
   var welcome = convertSection(main.querySelector("#welcome"), "welcome");
   var visit = convertSection(main.querySelector("#visit"), "location");
-  var uniformSection = Number(id) <= 6 ? convertSection(main.querySelector("#uniforms"), "uniforms") : null;
 
   var groups = {
     resources: wrapSection("resources", "page-resources", [resources]),
     life: wrapSection("activities", "page-life", [activities, gallery]),
     highlights: wrapSection("highlights", "page-highlights", [stats, projects, notices]),
-    campus: wrapSection("campus", "page-campus", [welcome, visit, uniformSection])
+    campus: wrapSection("campus", "page-campus", [welcome, visit])
   };
   var order = {
     "01": ["resources", "life", "highlights", "campus"],
@@ -227,12 +226,12 @@
   main.appendChild(contact);
   Array.from(main.children).forEach(function (element) { element.style.order = "0"; });
 
-  var navTargets = ["#resources", "#activities", "#highlights", "#campus", Number(id) <= 6 ? "#uniforms" : "#campus"];
+  var navTargets = ["#resources", "#activities", "#highlights", "#notices", "#campus"];
   document.querySelectorAll("#links a").forEach(function (link, index) {
     if (navTargets[index]) link.href = navTargets[index];
   });
   document.querySelectorAll('a[href="#welcome"],a[href="#visit"]').forEach(function (link) { link.href = "#campus"; });
-  document.querySelectorAll('a[href="#gallery"],a[href="#notices"]').forEach(function (link) { link.href = "#highlights"; });
+  document.querySelectorAll('a[href="#gallery"]').forEach(function (link) { link.href = "#highlights"; });
   var localityEn = {
     "01": "Khajani", "02": "Rapti Nagar", "03": "Kusumhi",
     "04": "Ramgarh Taal", "05": "Gorakhnath", "06": "Khajani",
@@ -262,7 +261,7 @@
   var currentLanguage = "en";
   var t = {
     en: {
-      nav: ["Classes & books", "Student life", "Highlights", "Campus", Number(id) <= 6 ? "Uniforms" : "Location"],
+      nav: ["Classes & books", "Student life", "Highlights", "Notices", "Location"],
       bands: ["All years", "Early years", "Primary", "Middle", "Secondary", "Senior"],
       choose: "Choose a class", all: "All subjects", search: "Search book or subject…",
       print: "Print / Save as PDF", price: "sample price", details: "View details ↗",
@@ -281,7 +280,7 @@
       footer: "Fictional details and photos"
     },
     hi: {
-      nav: ["कक्षाएँ और किताबें", "विद्यार्थी जीवन", "परियोजनाएँ", "परिसर", Number(id) <= 6 ? "वेशभूषा" : "स्थान"],
+      nav: ["कक्षाएँ और किताबें", "विद्यार्थी जीवन", "परियोजनाएँ", "सूचनाएँ", "स्थान"],
       bands: ["सभी कक्षाएँ", "प्रारंभिक", "प्राथमिक", "मध्य", "माध्यमिक", "वरिष्ठ"],
       choose: "कक्षा चुनें", all: "सभी विषय", search: "किताब या विषय खोजें…",
       print: "प्रिंट / PDF में सेव करें", price: "नमूना मूल्य", details: "विवरण देखें ↗",
@@ -371,8 +370,6 @@
     var hi = currentLanguage === "hi";
     var lang = t[currentLanguage];
     document.documentElement.lang = currentLanguage;
-    document.querySelectorAll("#uniforms [data-en][data-hi]").forEach(function (element) { element.textContent = hi ? element.dataset.hi : element.dataset.en; });
-    setText("#uniforms .section-title .kicker", hi ? profile.nameHi + " · विद्यालय वेशभूषा" : profile.name + " · UNIFORM GUIDE");
     document.title = (hi ? profile.nameHi : profile.name) + " · " + (hi ? "नमूना विद्यालय" : "school concept");
     var description = document.querySelector('meta[name="description"]');
     if (description) description.content = hi ? profile.nameHi + " · खजनी, गोरखपुर · कक्षा सामग्री और विद्यार्थी जीवन का नमूना" : profile.name + " · Khajani, Gorakhpur · sample classes, materials and student life";
@@ -486,9 +483,7 @@
   if (directions) directions.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(profile.name + " " + locationName);
   document.querySelectorAll("a[href*='wa.me']").forEach(function (link) {
     var phone = link.dataset.contactPhone || "9500694579";
-    var message = link.classList.contains("uniform-whatsapp")
-      ? "Hello, I would like uniform details for " + profile.name + " in " + localityEn[id] + ", Gorakhpur."
-      : "Hello, I have an enquiry about " + profile.name + " in " + localityEn[id] + ", Gorakhpur.";
+    var message = "Hello, I have an enquiry about " + profile.name + " in " + localityEn[id] + ", Gorakhpur.";
     link.href = "https://wa.me/91" + phone + "?text=" + encodeURIComponent(message);
   });
   document.querySelectorAll("img").forEach(function (img) {
