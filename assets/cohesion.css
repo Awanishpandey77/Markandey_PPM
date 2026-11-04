@@ -129,3 +129,23 @@ body[data-layout] .service-card,body[data-layout] .learning-row{color:var(--ink)
 @media(max-width:760px){body[data-layout="01"] .hero{padding-inline:16px}body[data-layout="02"] .hero{padding-inline:14px}body[data-layout="04"] .hero{padding-inline:12px}body[data-layout="07"] .hero{padding-inline:12px}}
 body.light-mode[data-layout="02"]{color-scheme:light;--ink:#18314a;--muted:#465d71;--paper:#edf5fa;--surface:#fff;--brand:#375f9e;--accent:#198d82;--soft:#dfedf3;--line:#c8dce2}
 body.light-mode[data-layout="09"]{color-scheme:light;--ink:#1d2c3a;--muted:#4e6170;--paper:#f6f9fb;--surface:#fff;--brand:#365873;--accent:#b1844d;--soft:#e8eff3;--line:#d5e0e7}
+
+/* Mobile compositions stack cleanly instead of squeezing the ten desktop layouts. */
+@media(max-width:760px){
+ body[data-layout="01"] .hero,body[data-layout="02"] .hero,body[data-layout="03"] .hero,body[data-layout="04"] .hero,body[data-layout="07"] .hero,body[data-layout="08"] .hero,body[data-layout="09"] .hero,body[data-layout="10"] .hero{grid-template-columns:minmax(0,1fr)!important;gap:22px!important;padding:30px 14px!important}
+ body[data-layout="01"] .hero-copy,body[data-layout="02"] .hero-copy,body[data-layout="03"] .hero-copy,body[data-layout="04"] .hero-copy,body[data-layout="07"] .hero-copy,body[data-layout="08"] .hero-copy,body[data-layout="09"] .hero-copy,body[data-layout="10"] .hero-copy{width:100%;max-width:none!important}
+ body[data-layout="01"] .hero h1,body[data-layout="02"] .hero h1,body[data-layout="03"] .hero h1,body[data-layout="04"] .hero h1,body[data-layout="07"] .hero h1,body[data-layout="08"] .hero h1,body[data-layout="09"] .hero h1,body[data-layout="10"] .hero h1{max-width:15ch!important;font-size:clamp(42px,11vw,62px)!important;line-height:.98!important;overflow-wrap:normal!important}
+ body[data-layout="01"] .hero-photo,body[data-layout="02"] .hero-photo{width:100%;height:280px!important;border-radius:22px!important}
+ body[data-layout="01"] .hero-photo img,body[data-layout="02"] .hero-photo img{width:100%;height:100%;border-radius:22px!important;object-position:center 35%}
+ body[data-layout="03"] .pop-collage{width:100%;height:280px!important}
+ body[data-layout="04"] .orbit-visual{width:100%;height:300px!important}
+ body[data-layout="05"] .hero{padding:32px 14px!important}
+ body[data-layout="05"] .heritage-photo{width:100%;height:220px!important}
+ body[data-layout="06"] .forest{min-height:0!important;padding:24px 0!important}
+ body[data-layout="06"] .forest-photo{position:relative!important;inset:auto!important;width:100%;height:230px!important;margin-bottom:22px;border-radius:24px!important}
+ body[data-layout="06"] .forest .hero-copy{max-width:none!important;padding:0 14px!important}
+ body[data-layout="07"] .commons-photo{width:100%;height:280px!important}
+ body[data-layout="08"] .lantern-art{width:100%;height:280px!important}
+ body[data-layout="09"] .north-photo{width:100%;height:270px!important}
+ body[data-layout="10"] .mosaic{width:100%;height:290px!important}
+}
