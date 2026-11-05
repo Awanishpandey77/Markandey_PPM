@@ -78,3 +78,9 @@
 @media(max-width:650px){.audience-panel ul{display:flex;flex-direction:column}.audience-panel li{min-height:44px;padding:11px 8px 11px 22px;font-size:12px}}
 /* Override the legacy two-part tab layout: audience bullets contain plain text only. */
 .audience-panel li{display:block;grid-template-columns:1fr}
+
+/* Give the gallery introduction and audience benefits a balanced side-by-side hero. */
+.gallery-hero .gallery-wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);align-items:center;justify-content:space-between;gap:clamp(34px,5vw,72px);max-width:1280px;text-align:left}
+.gallery-hero .studio-hero-copy{min-width:0;max-width:700px}.gallery-hero h1,.gallery-hero p{margin-inline:0}.gallery-hero h1{max-width:760px;font-size:clamp(46px,5.2vw,76px)}.gallery-hero p{max-width:620px}.gallery-hero .gallery-button{margin-inline:0}.gallery-hero .hero-benefits-interactive{width:100%;max-width:520px;justify-self:end}
+@media(max-width:900px){.gallery-hero .gallery-wrap{grid-template-columns:minmax(0,1fr);gap:28px;text-align:left}.gallery-hero .studio-hero-copy{max-width:760px}.gallery-hero .hero-benefits-interactive{justify-self:start;max-width:650px}}
+@media(max-width:600px){.gallery-hero .gallery-wrap{gap:22px}.gallery-hero h1{font-size:clamp(42px,11vw,58px)}.gallery-hero .hero-benefits-interactive{padding:21px 18px}}
